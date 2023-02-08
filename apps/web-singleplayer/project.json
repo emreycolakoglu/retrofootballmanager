@@ -1,0 +1,72 @@
+{
+  "name": "web-singleplayer",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/web-singleplayer/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/vite:build",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "outputPath": "dist/apps/web-singleplayer"
+      },
+      "configurations": {
+        "development": {
+          "mode": "development"
+        },
+        "production": {
+          "mode": "production"
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/vite:dev-server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "web-singleplayer:build"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "web-singleplayer:build:development",
+          "hmr": true
+        },
+        "production": {
+          "buildTarget": "web-singleplayer:build:production",
+          "hmr": false
+        }
+      }
+    },
+    "preview": {
+      "executor": "@nrwl/vite:preview-server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "web-singleplayer:build"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "web-singleplayer:build:development"
+        },
+        "production": {
+          "buildTarget": "web-singleplayer:build:production"
+        }
+      }
+    },
+    "test": {
+      "executor": "@nrwl/vite:test",
+      "outputs": ["coverage/apps/web-singleplayer"],
+      "options": {
+        "passWithNoTests": true,
+        "reportsDirectory": "../../coverage/apps/web-singleplayer"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/web-singleplayer/**/*.{ts,tsx,js,jsx}"]
+      }
+    }
+  },
+  "tags": ["app"]
+}
