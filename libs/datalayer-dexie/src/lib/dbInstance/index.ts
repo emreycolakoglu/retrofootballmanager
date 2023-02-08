@@ -1,13 +1,13 @@
-import { PlayerModel } from '@rfm/int-entities';
-import Dexie from 'dexie';
+import { PlayerModel } from "@rfm/interfaces";
+import Dexie from "dexie";
 
-class RFMDatabase extends Dexie {
+export class RFMDatabase extends Dexie {
   players: Dexie.Table<PlayerModel.Base, number>;
 
   constructor() {
-    super('rfm');
+    super("rfm");
     this.version(1).stores({
-      players: '++id',
+      players: "++id",
     });
   }
 }

@@ -1,12 +1,13 @@
-import { Route, Routes, Link } from 'react-router-dom';
-import { getPlayerById } from '@rfm/datalayer-dexie';
-import { useEffect, useState } from 'react';
+import { Route, Routes, Link } from "react-router-dom";
+import { DexieDatalayer } from "@rfm/datalayer-dexie";
+import { useEffect, useState } from "react";
 
 export function App() {
+  const datalayer = new DexieDatalayer();
   const [p, setP] = useState<any>(null);
 
   useEffect(() => {
-    getPlayerById(1).then((_p) => setP(_p));
+    datalayer.players.getPlayerById.execute(1).then((_p) => setP(_p));
   }, []);
 
   return (
@@ -34,7 +35,7 @@ export function App() {
           path="/"
           element={
             <div>
-              This is the generated root route.{' '}
+              This is the generated root route.{" "}
               <Link to="/page-2">Click here for page 2.</Link>
             </div>
           }

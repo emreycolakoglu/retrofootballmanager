@@ -1,9 +1,13 @@
-import { GetPlayerByIdUsecase } from '@rfm/int-usecases';
-import db from '../dbInstance';
+import { IGetPlayerByIdUsecase } from "@rfm/interfaces";
+import { RFMDatabase } from "../dbInstance";
 
-export async function getPlayerById(
-  id: GetPlayerByIdUsecase.Input
-): Promise<GetPlayerByIdUsecase.Output> {
-  const player = db.players.get(id);
-  return player;
+export class GetPlayerByIdUsecase implements IGetPlayerByIdUsecase.Usecase {
+  constructor(private readonly dbInstance: RFMDatabase) {}
+
+  async execute(
+    playerId: IGetPlayerByIdUsecase.Input
+  ): Promise<IGetPlayerByIdUsecase.Output> {
+    const player = this.dbInstance.players.get(playerId);
+    return player;
+  }
 }
