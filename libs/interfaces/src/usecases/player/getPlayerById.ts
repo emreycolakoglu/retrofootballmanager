@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-empty-interface */
 import { PlayerModel } from "../../models";
 
 export namespace IGetPlayerByIdUsecase {
@@ -7,6 +6,6 @@ export namespace IGetPlayerByIdUsecase {
       playerId: IGetPlayerByIdUsecase.Input
     ) => Promise<IGetPlayerByIdUsecase.Output>;
   }
-  export interface Input extends Number {}
-  export interface Output extends PlayerModel.Base {}
+  export type Input = number;
+  export type Output = PlayerModel.Base;
 }
