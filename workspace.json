@@ -3,7 +3,6 @@
   "version": 2,
   "projects": {
     "datalayer-dexie": "libs/datalayer-dexie",
-    "int-entities": "libs/int-entities",
     "interfaces": "libs/interfaces",
     "web-singleplayer": "apps/web-singleplayer",
     "web-singleplayer-e2e": "apps/web-singleplayer-e2e"

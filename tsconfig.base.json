@@ -16,7 +16,6 @@
     "baseUrl": ".",
     "paths": {
       "@rfm/datalayer-dexie": ["libs/datalayer-dexie/src/index.ts"],
-      "@rfm/int-entities": ["libs/int-entities/src/index.ts"],
       "@rfm/interfaces": ["libs/interfaces/src/index.ts"]
     }
   },
