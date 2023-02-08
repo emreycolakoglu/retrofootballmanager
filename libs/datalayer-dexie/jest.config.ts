@@ -1,6 +1,6 @@
 /* eslint-disable */
 export default {
-  displayName: 'entities',
+  displayName: 'datalayer-dexie',
   preset: '../../jest.preset.js',
   testEnvironment: 'node',
   transform: {
@@ -10,5 +10,5 @@ export default {
     ],
   },
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
-  coverageDirectory: '../../coverage/libs/entities',
+  coverageDirectory: '../../coverage/libs/datalayer-dexie',
 };

@@ -1,6 +1,6 @@
 /* eslint-disable */
 export default {
-  displayName: 'use-cases',
+  displayName: 'int-entities',
   preset: '../../jest.preset.js',
   testEnvironment: 'node',
   transform: {
@@ -10,5 +10,5 @@ export default {
     ],
   },
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
-  coverageDirectory: '../../coverage/libs/use-cases',
+  coverageDirectory: '../../coverage/libs/int-entities',
 };
