@@ -1,5 +1,5 @@
 import { ICreateClubUsecase } from "@rfm/interfaces";
-import { RFMDatabase } from "../dbInstance";
+import { RFMDatabase } from "../../dbInstance";
 
 export class CreateClubUsecase implements ICreateClubUsecase.Usecase {
   constructor(private readonly dbInstance: RFMDatabase) {}

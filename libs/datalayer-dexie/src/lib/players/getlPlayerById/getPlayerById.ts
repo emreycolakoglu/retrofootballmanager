@@ -1,5 +1,5 @@
 import { IGetPlayerByIdUsecase } from "@rfm/interfaces";
-import { RFMDatabase } from "../dbInstance";
+import { RFMDatabase } from "../../dbInstance";
 
 export class GetPlayerByIdUsecase implements IGetPlayerByIdUsecase.Usecase {
   constructor(private readonly dbInstance: RFMDatabase) {}
