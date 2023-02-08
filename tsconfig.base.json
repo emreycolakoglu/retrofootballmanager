@@ -15,7 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@rfm/entities": ["libs/entities/src/index.ts"]
+      "@rfm/entities": ["libs/entities/src/index.ts"],
+      "@rfm/use-cases": ["libs/use-cases/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
