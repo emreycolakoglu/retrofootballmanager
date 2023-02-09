@@ -1,13 +1,12 @@
 import { Route, Routes, Link } from "react-router-dom";
-import { DexieDatalayer } from "@rfm/datalayer-dexie";
 import { useEffect, useState } from "react";
+import db from "./shared/database/dexie";
 
 export function App() {
-  const datalayer = new DexieDatalayer();
   const [p, setP] = useState<any>(null);
 
   useEffect(() => {
-    datalayer.players.getPlayerById.execute(1).then((_p) => setP(_p));
+    db.players.get(1).then((_p) => setP(_p));
   }, []);
 
   return (

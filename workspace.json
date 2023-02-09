@@ -2,7 +2,6 @@
   "$schema": "./node_modules/nx/schemas/workspace-schema.json",
   "version": 2,
   "projects": {
-    "datalayer-dexie": "libs/datalayer-dexie",
     "interfaces": "libs/interfaces",
     "utility": "libs/utility",
     "web-singleplayer": "apps/web-singleplayer",
