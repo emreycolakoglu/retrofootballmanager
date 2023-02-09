@@ -1,0 +1,7 @@
+@import "../../ui-mixins/_buttons.scss";
+
+.button {
+  @include buttonBase();
+  @include buttonBlue();
+  @include buttonRounded();
+}

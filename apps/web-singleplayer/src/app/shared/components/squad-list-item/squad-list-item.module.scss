@@ -1,0 +1,43 @@
+@import "../../ui-mixins/_variables.scss";
+
+.container {
+  display: flex;
+  flex-direction: row;
+  padding: 0 8px;
+  align-items: center;
+  height: 22px;
+  margin-bottom: 1px;
+  user-select: none;
+
+  &:nth-child(4n + 1),
+  &:nth-child(4n + 2) {
+    background-color: rgba($black, 0.1);
+  }
+}
+
+.buttonPosition {
+  width: 40px;
+}
+
+.statusPosition {
+  width: 40px;
+  padding: 0 5px;
+}
+
+.playerLink {
+  display: block;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  text-decoration: none;
+}
+
+.namePosition {
+  font-size: 15px;
+}
+
+.posPosition {
+  font-size: 14px;
+  margin-left: auto;
+  color: $titleYellow;
+}

@@ -1,1 +1,29 @@
 /* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
+
+@import "./app/shared/ui-mixins/_reset.scss";
+@import "./app/shared/ui-mixins/_fonts.scss";
+@import "./app/shared/ui-mixins/_variables.scss";
+@import "./app/shared/ui-mixins/_mixins.scss";
+@import "./app/shared/ui-mixins/_grid.scss";
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  color: $primaryText;
+  font-size: $base-font-size;
+  font-family: $font-family;
+  user-select: none;
+}
+
+@include make-grid-columns();
+
+.row {
+  @include make-row();
+}
+
+html {
+  @include htmlBase();
+}

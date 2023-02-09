@@ -1,0 +1,18 @@
+@import "../../ui-mixins/_variables.scss";
+@import "../../ui-mixins/_mixins.scss";
+@import "../../ui-mixins/_buttons.scss";
+
+.prevNextWrapper {
+  display: flex;
+
+  button {
+    @include buttonBase();
+
+    width: 50%;
+    height: 44px;
+    border-radius: 10px;
+    font-size: 12px;
+
+    @include buttonTransparent();
+  }
+}

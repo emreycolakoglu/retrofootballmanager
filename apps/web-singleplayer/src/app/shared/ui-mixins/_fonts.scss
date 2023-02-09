@@ -1,0 +1,16 @@
+@font-face {
+  font-family: VagRounded;
+  src: url("../../../fonts/vagrounded.woff2") format("woff2"),
+    url("../../../fonts/vagrounded.woff") format("woff"),
+    url("../../../fonts/vagrounded.ttf") format("truetype");
+  font-weight: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: VagRounded;
+  src: url("../../../fonts/vagrounded-tr-bold-webfont.woff2") format("woff2"),
+    url("../../../fonts/vagrounded-tr-bold-webfont.woff") format("woff"),
+    url("../../../fonts/vagrounded-tr-bold-webfont.ttf") format("truetype");
+  font-weight: bold;
+  font-display: swap;
+}

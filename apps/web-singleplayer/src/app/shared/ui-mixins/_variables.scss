@@ -1,0 +1,53 @@
+// Font Family
+$font-family: "VagRounded", "Helvetica Neue", Arial, serif;
+
+// Base Font for HTML
+$base-font-size: 14px;
+
+$white: #ffffff;
+$black: #000000;
+
+/* buttons */
+$greenButtonStart: #227c56;
+$greenButtonEnd: #1d6546;
+
+$blueButtonStart: #3c5e97;
+$blueButtonEnd: #2e4a7a;
+
+$lightBlueButtonStart: #749bc3;
+$lightBlueButtonEnd: #6080a2;
+
+$redButtonStart: #b10d0d;
+$redButtonEnd: #970000;
+
+$yellowButtonStart: #f0e564;
+$yellowButtonEnd: #d8c600;
+
+$googleButtonStart: #4285f4;
+$googleButtonEnd: darken($googleButtonStart, 10%);
+
+/* text colors */
+$loanInPlayerBlue: #66ccff;
+$titleYellow: #ffff33;
+$skillValueYellow: #ffd000;
+
+$lightShadowTransparency: 0.5;
+$darkShadowTransparency: 0.5;
+$buttonHoverLightenRatio: 2%;
+
+$primaryBackground: #2c436c;
+$primaryText: $white;
+$link-color: $primaryText;
+
+$grid-breakpoints: (
+  xs: 0,
+  md: 768px,
+) !default;
+
+$container-max-widths: (
+  md: 1200px,
+) !default;
+
+$grid-columns: 12 !default;
+$grid-gutter-width: 8px !default;
+$container-padding-x: calc($grid-gutter-width / 2) !default;
