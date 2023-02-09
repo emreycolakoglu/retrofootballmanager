@@ -4,6 +4,7 @@
   "projects": {
     "datalayer-dexie": "libs/datalayer-dexie",
     "interfaces": "libs/interfaces",
+    "utility": "libs/utility",
     "web-singleplayer": "apps/web-singleplayer",
     "web-singleplayer-e2e": "apps/web-singleplayer-e2e"
   }

@@ -1,6 +1,6 @@
 export namespace CityModel {
   export interface Base {
-    id?: string;
+    id?: number;
     name: string;
     countryId: number;
     climate: string;

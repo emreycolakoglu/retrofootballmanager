@@ -1,5 +1,6 @@
 import { IDatalayer } from "@rfm/interfaces";
 import { CreateClubUsecase } from "./clubs";
+import { CreateContinentUsecase, ListContinentUsecase } from "./continents";
 import _dbInstance, { RFMDatabase } from "./dbInstance";
 import { CreatePlayerUsecase, GetPlayerByIdUsecase } from "./players";
 
@@ -12,5 +13,9 @@ export class DexieDatalayer implements IDatalayer {
   };
   clubs: IDatalayer["clubs"] = {
     createClub: new CreateClubUsecase(this.dbInstance),
+  };
+  continents: IDatalayer["continents"] = {
+    createContinent: new CreateContinentUsecase(this.dbInstance),
+    listContinents: new ListContinentUsecase(this.dbInstance),
   };
 }

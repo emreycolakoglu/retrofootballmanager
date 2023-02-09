@@ -3,6 +3,10 @@ import {
   ICreatePlayerUsecase,
   IGetPlayerByIdUsecase,
 } from "../usecases";
+import {
+  ICreateContinentUsecase,
+  IListContinentUsecase,
+} from "../usecases/continents";
 
 export interface IDatalayer {
   players: {
@@ -10,6 +14,9 @@ export interface IDatalayer {
      * retrieves a player by id
      */
     getPlayerById: IGetPlayerByIdUsecase.Usecase;
+    /**
+     * creates a player
+     */
     createPlayer: ICreatePlayerUsecase.Usecase;
   };
   clubs: {
@@ -17,5 +24,15 @@ export interface IDatalayer {
      * creates a club
      */
     createClub: ICreateClubUsecase.Usecase;
+  };
+  continents: {
+    /**
+     * creates a continent
+     */
+    createContinent: ICreateContinentUsecase.Usecase;
+    /**
+     * lists continents
+     */
+    listContinents: IListContinentUsecase.Usecase;
   };
 }

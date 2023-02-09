@@ -16,7 +16,8 @@
     "baseUrl": ".",
     "paths": {
       "@rfm/datalayer-dexie": ["libs/datalayer-dexie/src/index.ts"],
-      "@rfm/interfaces": ["libs/interfaces/src/index.ts"]
+      "@rfm/interfaces": ["libs/interfaces/src/index.ts"],
+      "@rfm/utility": ["libs/utility/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

@@ -1,6 +1,6 @@
 export namespace CountryModel {
   export interface Base {
-    id?: string;
+    id?: number;
     name: string;
     alpha2Code: string;
     alpha3Code: string;
