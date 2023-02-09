@@ -1,0 +1,14 @@
+@import "../../../../shared/ui-mixins/_buttons.scss";
+
+.label {
+  line-height: 30px;
+}
+
+.button {
+  @include buttonBase();
+  @include buttonBlue();
+  @include buttonRounded();
+  @include buttonSmall();
+
+  width: 100%;
+}

@@ -1,11 +1,14 @@
-import { useLocation, useNavigate } from "react-router-dom";
-import { BgSwitcher } from "./shared/components/bg-switcher/bg-switcher";
-import { CalenderShell } from "./shared/components/calender-shell/calender-shell";
-import { Layout } from "./shared/components/layout/layout";
-import NewsScroller from "./shared/components/news-scroller/news-scroller";
-import { PrevNextButtons } from "./shared/components/prev-next-buttons/prev-next-buttons";
-import { SidebarShell } from "./shared/components/sidebar-shell/sidebar-shell";
-import { VersionLabel } from "./shared/components/version-label/version-label";
+import { Route, Routes, useLocation, useNavigate } from "react-router-dom";
+import LandingView from "./game/landing/views/landingView/landingView";
+import {
+  BgSwitcher,
+  CalenderShell,
+  Layout,
+  NewsScroller,
+  PrevNextButtons,
+  SidebarShell,
+  VersionLabel,
+} from "./shared/components";
 
 export function App() {
   const location = useLocation();
@@ -37,7 +40,11 @@ export function App() {
             <VersionLabel version={"0.0.1"} />
           </SidebarShell>
         }
-      ></Layout>
+      >
+        <Routes>
+          <Route path="/" element={<LandingView />} />
+        </Routes>
+      </Layout>
     </BgSwitcher>
   );
 }
