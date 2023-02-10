@@ -1,13 +1,15 @@
 import { Route, Routes, useLocation, useNavigate } from "react-router-dom";
+import {
+  DataCalenderShell,
+  DataNewsScroller,
+  DataVersionLabel,
+} from "./game/data-components";
 import LandingView from "./game/landing/views/landingView/landingView";
 import {
   BgSwitcher,
-  CalenderShell,
   Layout,
-  NewsScroller,
   PrevNextButtons,
   SidebarShell,
-  VersionLabel,
 } from "./shared/components";
 
 export function App() {
@@ -17,18 +19,10 @@ export function App() {
   return (
     <BgSwitcher history={location.key}>
       <Layout
-        footerNode={
-          <NewsScroller
-            news={[
-              {
-                label: "Welcome",
-              },
-            ]}
-          />
-        }
+        footerNode={<DataNewsScroller />}
         sideNode={
           <SidebarShell>
-            <CalenderShell line1="sth" line2="sth" line3="sth" />
+            <DataCalenderShell />
             <PrevNextButtons
               onPrev={() => {
                 navigate(-1);
@@ -37,7 +31,7 @@ export function App() {
                 navigate(1);
               }}
             />
-            <VersionLabel version={"0.0.1"} />
+            <DataVersionLabel />
           </SidebarShell>
         }
       >
