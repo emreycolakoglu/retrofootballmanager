@@ -3,6 +3,7 @@
   "version": 2,
   "projects": {
     "interfaces": "libs/interfaces",
+    "seeders": "libs/seeders",
     "utility": "libs/utility",
     "web-singleplayer": "apps/web-singleplayer",
     "web-singleplayer-e2e": "apps/web-singleplayer-e2e"

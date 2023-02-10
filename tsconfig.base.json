@@ -16,6 +16,7 @@
     "baseUrl": ".",
     "paths": {
       "@rfm/interfaces": ["libs/interfaces/src/index.ts"],
+      "@rfm/seeders": ["libs/seeders/src/index.ts"],
       "@rfm/utility": ["libs/utility/src/index.ts"]
     }
   },
