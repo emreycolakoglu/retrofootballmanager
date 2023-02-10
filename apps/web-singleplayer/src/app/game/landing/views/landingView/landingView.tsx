@@ -4,7 +4,7 @@ import {
   HeaderSecondaryLine,
   PanelWithTitle,
 } from "../../../../shared/components";
-import styles from "./LandingView.module.scss";
+import styles from "./landingView.module.scss";
 
 export default function LandingView() {
   // check if there is a savegame
