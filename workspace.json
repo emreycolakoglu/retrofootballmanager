@@ -2,6 +2,7 @@
   "$schema": "./node_modules/nx/schemas/workspace-schema.json",
   "version": 2,
   "projects": {
+    "dexie-database": "libs/dexie-database",
     "interfaces": "libs/interfaces",
     "seeders": "libs/seeders",
     "utility": "libs/utility",

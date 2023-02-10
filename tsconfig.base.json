@@ -15,6 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@rfm/dexie-database": ["libs/dexie-database/src/index.ts"],
       "@rfm/interfaces": ["libs/interfaces/src/index.ts"],
       "@rfm/seeders": ["libs/seeders/src/index.ts"],
       "@rfm/utility": ["libs/utility/src/index.ts"]

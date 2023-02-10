@@ -4,15 +4,17 @@ import {
   CityModel,
   ContinentModel,
   CountryModel,
+  ColorModel,
 } from "@rfm/interfaces";
 import Dexie from "dexie";
 
-export class RFMDatabase extends Dexie {
-  players: Dexie.Table<PlayerModel.Base, number>;
-  clubs: Dexie.Table<ClubModel.Base, number>;
-  continents: Dexie.Table<ContinentModel.Base, number>;
-  countries: Dexie.Table<CountryModel.Base, number>;
-  cities: Dexie.Table<CityModel.Base, number>;
+class RFMDatabase extends Dexie {
+  players!: Dexie.Table<PlayerModel.Base, number>;
+  clubs!: Dexie.Table<ClubModel.Base, number>;
+  continents!: Dexie.Table<ContinentModel.Base, number>;
+  countries!: Dexie.Table<CountryModel.Base, number>;
+  cities!: Dexie.Table<CityModel.Base, number>;
+  colors!: Dexie.Table<ColorModel.Base, number>;
 
   constructor() {
     super("rfm");
@@ -22,6 +24,7 @@ export class RFMDatabase extends Dexie {
       continents: "++id",
       countries: "++id",
       cities: "++id",
+      colors: "++id",
     });
   }
 }
