@@ -32,5 +32,5 @@ export async function seedContinents(): Promise<void> {
     },
   ];
 
-  await db.continents.bulkPut(continents);
+  await db.continents.bulkAdd(continents);
 }
