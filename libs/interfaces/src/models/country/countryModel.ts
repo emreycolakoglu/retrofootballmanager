@@ -7,8 +7,6 @@ export namespace CountryModel {
     continentId: number;
     prestige: number;
     availableToPlay: boolean;
-    demonym: string;
     flag?: string;
-    futheadId: number;
   }
 }

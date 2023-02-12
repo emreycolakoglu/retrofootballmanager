@@ -68,7 +68,7 @@ export namespace RestCountries {
       side: string;
     };
     timezones: string[];
-    continents: string[];
+    continents: Continent[];
     flags: {
       png: string;
       svg: string;
@@ -87,5 +87,12 @@ export namespace RestCountries {
       regex: string;
     };
     borders: string[];
+  }
+  export enum Continent {
+    Europe = "Europe",
+    Africa = "Africa",
+    Americas = "Americas",
+    Oceania = "Oceania",
+    Asia = "Asia",
   }
 }
