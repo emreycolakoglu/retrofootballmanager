@@ -1,3 +1,6 @@
+import db from "@rfm/dexie-database";
+import { useLiveQuery } from "dexie-react-hooks";
+import { useEffect, useMemo, useState } from "react";
 import {
   Header,
   HeaderPrimaryLine,
@@ -10,11 +13,16 @@ import {
 import styles from "./createGameView.module.scss";
 
 export default function CreateGameView() {
-  const countries: any[] = [];
+  const [request, setRequest] = useState<any>({});
+  const colors = useLiveQuery(() => db.colors.toArray(), []);
+  const countries = useLiveQuery(() => db.countries.toArray(), []);
 
   return (
     <>
-      <Header backgroundColor="#ffffff" textColor="#111f41">
+      <Header
+        backgroundColor={request.homeMain}
+        textColor={request.homeSecondary}
+      >
         <HeaderPrimaryLine title="* Welcome to Futbolico *" />
       </Header>
 
@@ -89,45 +97,45 @@ export default function CreateGameView() {
               >
                 <Select
                   label="* Main *"
-                  //value={request.homeMain}
+                  value={request.homeMain}
                   required
-                  // onChange={(e) => {
-                  //   setRequest({
-                  //     ...request,
-                  //     homeMain: e.target.value,
-                  //   });
-                  // }}
+                  onChange={(e) => {
+                    setRequest({
+                      ...request,
+                      homeMain: e.target.value,
+                    });
+                  }}
                 >
-                  {/* {colors.map((c, i) => (
-                  <option
-                    key={i}
-                    value={c.value}
-                    disabled={c.value == request.homeSecondary}
-                  >
-                    {c.name}
-                  </option>
-                ))} */}
+                  {colors?.map((c, i) => (
+                    <option
+                      key={i}
+                      value={c.value}
+                      disabled={c.value == request.homeSecondary}
+                    >
+                      {c.name}
+                    </option>
+                  ))}
                 </Select>
                 <Select
                   label="* Secondary *"
-                  //value={request.homeSecondary}
+                  value={request.homeSecondary}
                   required
-                  // onChange={(e) => {
-                  //   setRequest({
-                  //     ...request,
-                  //     homeSecondary: e.target.value,
-                  //   });
-                  // }}
+                  onChange={(e) => {
+                    setRequest({
+                      ...request,
+                      homeSecondary: e.target.value,
+                    });
+                  }}
                 >
-                  {/* {colors.map((c, i) => (
-                  <option
-                    key={i}
-                    value={c.value}
-                    disabled={c.value == request.homeMain}
-                  >
-                    {c.name}
-                  </option>
-                ))} */}
+                  {colors?.map((c, i) => (
+                    <option
+                      key={i}
+                      value={c.value}
+                      disabled={c.value == request.homeMain}
+                    >
+                      {c.name}
+                    </option>
+                  ))}
                 </Select>
               </PanelWithTitle>
 
