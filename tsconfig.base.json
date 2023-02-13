@@ -20,6 +20,7 @@
       "@rfm/fifa-to-fm-stats-converter": [
         "libs/fifa-to-fm-stats-converter/src/index.ts"
       ],
+      "@rfm/generators": ["libs/generators/src/index.ts"],
       "@rfm/interfaces": ["libs/interfaces/src/index.ts"],
       "@rfm/seeders": ["libs/seeders/src/index.ts"],
       "@rfm/utility": ["libs/utility/src/index.ts"]

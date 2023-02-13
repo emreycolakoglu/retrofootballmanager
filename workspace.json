@@ -5,11 +5,12 @@
     "dexie-database": "libs/dexie-database",
     "fifa-stats-downloader": "libs/fifa-stats-downloader",
     "fifa-to-fm-stats-converter": "libs/fifa-to-fm-stats-converter",
+    "generators": "libs/generators",
     "interfaces": "libs/interfaces",
     "seeders": "libs/seeders",
+    "static": "libs/static",
     "utility": "libs/utility",
     "web-singleplayer": "apps/web-singleplayer",
-    "web-singleplayer-e2e": "apps/web-singleplayer-e2e",
-    "static": "libs/static"
+    "web-singleplayer-e2e": "apps/web-singleplayer-e2e"
   }
 }
