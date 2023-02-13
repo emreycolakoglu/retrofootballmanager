@@ -16,6 +16,10 @@
     "baseUrl": ".",
     "paths": {
       "@rfm/dexie-database": ["libs/dexie-database/src/index.ts"],
+      "@rfm/fifa-stats-downloader": ["libs/fifa-stats-downloader/src/index.ts"],
+      "@rfm/fifa-to-fm-stats-converter": [
+        "libs/fifa-to-fm-stats-converter/src/index.ts"
+      ],
       "@rfm/interfaces": ["libs/interfaces/src/index.ts"],
       "@rfm/seeders": ["libs/seeders/src/index.ts"],
       "@rfm/utility": ["libs/utility/src/index.ts"]
