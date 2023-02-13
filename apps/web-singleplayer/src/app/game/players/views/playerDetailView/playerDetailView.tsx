@@ -5,10 +5,9 @@ import {
   PlayerStyle,
 } from "@rfm/generators";
 import { Header, HeaderPrimaryLine } from "../../../../shared/components";
-import PlayerAttributesColumn from "../../components/playerAttributesColumn/playerAttributesColumn";
-import styles from "./playerDetailView.module.scss";
-import classNames from "classnames";
 import { PlayerDetailTopBar } from "../../components/playerDetailTopBar/playerDetailTopBar";
+import { Route, Routes } from "react-router-dom";
+import { PlayerAttributesRow } from "../../components/playerAttributesRow/playerAttributesRow";
 
 export default function PlayerDetailView() {
   const player = {
@@ -38,33 +37,9 @@ export default function PlayerDetailView() {
 
       <PlayerDetailTopBar player={player} />
 
-      <div className={classNames("row", styles["player-attribute-row"])}>
-        <div className="col-4">
-          {player?.position?.goalkeeper > 15 ? (
-            <PlayerAttributesColumn
-              label={"Goalkeeping"}
-              attributes={player?.goalkeeping}
-            />
-          ) : (
-            <PlayerAttributesColumn
-              label={"Technical"}
-              attributes={player?.technical}
-            />
-          )}
-        </div>
-        <div className="col-4">
-          <PlayerAttributesColumn
-            label={"Mental"}
-            attributes={player?.mental}
-          />
-        </div>
-        <div className="col-4">
-          <PlayerAttributesColumn
-            label={"Physical"}
-            attributes={player?.physical}
-          />
-        </div>
-      </div>
+      <Routes>
+        <Route path="/" element={<PlayerAttributesRow player={player} />} />
+      </Routes>
     </>
   );
 }

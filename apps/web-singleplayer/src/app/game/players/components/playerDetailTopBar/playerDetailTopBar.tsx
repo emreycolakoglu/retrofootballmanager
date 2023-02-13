@@ -18,6 +18,7 @@ export const PlayerDetailTopBar = (props: Props): ReactElement => {
             className={({ isActive }) =>
               isActive ? styles.active : styles.button
             }
+            end
           >
             {t("Profile")}
           </NavLink>
@@ -30,7 +31,7 @@ export const PlayerDetailTopBar = (props: Props): ReactElement => {
             {t("Information")}
           </NavLink>
           <NavLink
-            to={`/club/${props.player?.id}/form`}
+            to={`/player/${props.player?.id}/form`}
             className={({ isActive }) =>
               isActive ? styles.active : styles.button
             }
@@ -38,7 +39,7 @@ export const PlayerDetailTopBar = (props: Props): ReactElement => {
             {t("Form")}
           </NavLink>
           <NavLink
-            to={`/club/${props.player?.id}/history`}
+            to={`/player/${props.player?.id}/history`}
             className={({ isActive }) =>
               isActive ? styles.active : styles.button
             }

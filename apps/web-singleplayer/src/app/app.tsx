@@ -48,7 +48,7 @@ export function App() {
         <Routes>
           <Route path="/" element={<LandingView />} />
           <Route path="/new" element={<CreateGameView />} />
-          <Route path="/player/:id" element={<PlayerDetailView />} />
+          <Route path="/player/:id/*" element={<PlayerDetailView />} />
         </Routes>
       </Layout>
     </BgSwitcher>

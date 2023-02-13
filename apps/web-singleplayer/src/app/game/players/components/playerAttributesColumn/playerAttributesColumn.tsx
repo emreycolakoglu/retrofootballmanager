@@ -3,7 +3,7 @@ import { PanelWithTitle } from "../../../../shared/components";
 import React, { ReactElement } from "react";
 import { SingleAttributeInColumn } from "../singleAttributeColumn/singleAttributeColumn";
 
-const PlayerAttributesColumn = (props: Props): ReactElement => {
+export const PlayerAttributesColumn = (props: Props): ReactElement => {
   function printAttributes() {
     if (!props.attributes) return;
 
@@ -14,7 +14,12 @@ const PlayerAttributesColumn = (props: Props): ReactElement => {
         //@ts-ignore
         const element = props.attributes[key];
         result.push(
-          <SingleAttributeInColumn key={key} label={key} value={element} />
+          <SingleAttributeInColumn
+            key={key}
+            label={key}
+            value={element}
+            kind={props.kind}
+          />
         );
       }
     }
@@ -33,6 +38,5 @@ interface Props {
     | PlayerModel.GoalkeepingSkills
     | PlayerModel.MentalSkills
     | PlayerModel.PhysicalSkills;
+  kind: "technical" | "goalkeeping" | "mental" | "physical";
 }
-
-export default PlayerAttributesColumn;
