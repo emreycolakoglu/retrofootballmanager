@@ -9,6 +9,7 @@
     "seeders": "libs/seeders",
     "utility": "libs/utility",
     "web-singleplayer": "apps/web-singleplayer",
-    "web-singleplayer-e2e": "apps/web-singleplayer-e2e"
+    "web-singleplayer-e2e": "apps/web-singleplayer-e2e",
+    "static": "libs/static"
   }
 }

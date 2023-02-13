@@ -13,7 +13,10 @@ import {
 import styles from "./createGameView.module.scss";
 
 export default function CreateGameView() {
-  const [request, setRequest] = useState<any>({});
+  const [request, setRequest] = useState<any>({
+    homeMain: "#000080",
+    homeSecondary: "#FFFFFF",
+  });
   const colors = useLiveQuery(() => db.colors.toArray(), []);
   const countries = useLiveQuery(() => db.countries.toArray(), []);
 
@@ -56,6 +59,7 @@ export default function CreateGameView() {
                   // }}
                 />
               </PanelWithTitle>
+
               <PanelWithTitle
                 title="* Club Info *"
                 titleSize="small"
@@ -72,6 +76,7 @@ export default function CreateGameView() {
                   // }}
                 />
                 <Select
+                  style={{ marginTop: 2 }}
                   label="* Country *"
                   //value={request.country}
                   required
@@ -187,17 +192,18 @@ export default function CreateGameView() {
                 ))} */}
                 </Select>
               </PanelWithTitle>
+
+              <PanelWithTitle title="" style={{ marginTop: 8 }}>
+                <Button
+                  type="submit"
+                  className="blue rounded"
+                  style={{ marginTop: 0 }}
+                >
+                  * Submit *
+                </Button>
+              </PanelWithTitle>
             </form>
           </div>
-          <Form legend="" style={{ marginTop: 8 }}>
-            <Button
-              type="submit"
-              className="blue rounded"
-              style={{ marginTop: 8 }}
-            >
-              * Submit *
-            </Button>
-          </Form>
         </div>
       </div>
     </>
