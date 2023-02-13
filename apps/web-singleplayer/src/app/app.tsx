@@ -18,6 +18,9 @@ const LandingView = lazy(
 const CreateGameView = lazy(
   () => import("./game/landing/views/createGameView/createGameView")
 );
+const PlayerDetailView = lazy(
+  () => import("./game/players/views/playerDetailView/playerDetailView")
+);
 
 export function App() {
   const location = useLocation();
@@ -45,6 +48,7 @@ export function App() {
         <Routes>
           <Route path="/" element={<LandingView />} />
           <Route path="/new" element={<CreateGameView />} />
+          <Route path="/player/:id" element={<PlayerDetailView />} />
         </Routes>
       </Layout>
     </BgSwitcher>
