@@ -1,3 +1,6 @@
+import db from "@rfm/dexie-database";
+import { useLiveQuery } from "dexie-react-hooks";
+import { Link, NavLink } from "react-router-dom";
 import {
   Header,
   HeaderPrimaryLine,
@@ -8,8 +11,8 @@ import styles from "./landingView.module.scss";
 
 export default function LandingView() {
   // check if there is a savegame
+  const game = useLiveQuery(() => db.game.get(0));
 
-  // check if db is seeded
   return (
     <>
       <Header backgroundColor="#ffffff" textColor="#111f41">
@@ -23,16 +26,29 @@ export default function LandingView() {
           titleAlign={"left"}
           style={{ marginTop: 8 }}
         >
-          <div className="row">
-            <div className="col-md-3 offset-md-2">
-              <button className={styles.button}>Start Playing</button>
+          {!game ? (
+            <div className="row">
+              <div className="col-md-3 offset-md-2">
+                <Link to="/new" className={styles.button}>
+                  * New Game *
+                </Link>
+              </div>
+              <div className="col-md-5 offset-md-1">
+                <p className={styles["label"]}>{"* Create a new game *"}</p>
+              </div>
             </div>
-            <div className="col-md-5 offset-md-1">
-              <p className={styles["label"]}>
-                {"* Sign in and start playing *"}
-              </p>
+          ) : (
+            <div className="row">
+              <div className="col-md-3 offset-md-2">
+                <button className={styles.button}>*Load Game*</button>
+              </div>
+              <div className="col-md-5 offset-md-1">
+                <p className={styles["label"]}>
+                  {"* Load your previous game *"}
+                </p>
+              </div>
             </div>
-          </div>
+          )}
         </PanelWithTitle>
       </div>
     </>

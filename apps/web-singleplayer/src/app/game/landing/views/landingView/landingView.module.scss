@@ -9,6 +9,9 @@
   @include buttonBlue();
   @include buttonRounded();
   @include buttonSmall();
+  display: block;
+  text-decoration: none;
+  line-height: 27px;
 
   width: 100%;
 }
