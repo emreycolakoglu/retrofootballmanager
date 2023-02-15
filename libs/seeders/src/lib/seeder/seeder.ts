@@ -2,6 +2,7 @@ import db from "@rfm/dexie-database";
 import { seedColors } from "../colors";
 import { seedContinents } from "../continent";
 import { seedCountries } from "../countries";
+import { seedNews } from "../news";
 
 export async function seedData() {
   const existingContinentCount = await db.continents.count();
@@ -17,5 +18,10 @@ export async function seedData() {
   const existingCountryCount = await db.countries.count();
   if (!existingCountryCount) {
     await seedCountries();
+  }
+
+  const existingNewsCount = await db.news.count();
+  if (!existingNewsCount) {
+    await seedNews();
   }
 }

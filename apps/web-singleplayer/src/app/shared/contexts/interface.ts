@@ -1,5 +1,2 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-export interface IGameContext {
-  gameDate?: number;
-  news?: string[];
-}
+export interface IGameContext {}

@@ -5,6 +5,8 @@ import {
   ContinentModel,
   CountryModel,
   ColorModel,
+  GameModel,
+  NewsModel,
 } from "@rfm/interfaces";
 import Dexie from "dexie";
 
@@ -15,16 +17,20 @@ class RFMDatabase extends Dexie {
   countries!: Dexie.Table<CountryModel.Base, number>;
   cities!: Dexie.Table<CityModel.Base, number>;
   colors!: Dexie.Table<ColorModel.Base, number>;
+  game!: Dexie.Table<GameModel.Base, number>;
+  news!: Dexie.Table<NewsModel.Base, number>;
 
   constructor() {
     super("rfm");
-    this.version(3).stores({
+    this.version(4).stores({
       players: "++id",
       clubs: "++id",
       continents: "++id",
       countries: "++id",
       cities: "++id",
       colors: "++id",
+      game: "++id",
+      news: "++id",
     });
   }
 }

@@ -1,9 +1,8 @@
 import { CalenderShell, CalenderShellProps } from "../../../shared/components";
 import dayjs from "dayjs";
-import { useGameContext } from "../../../shared/contexts";
 
 export function DataCalenderShell(props: CalenderShellProps) {
-  const { gameDate } = useGameContext();
+  const gameDate = Date.now();
   return (
     <CalenderShell
       line1={dayjs(gameDate).format("DD/MM/YYYY")}
