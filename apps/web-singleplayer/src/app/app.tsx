@@ -1,26 +1,18 @@
-import { lazy } from "react";
 import { Route, Routes, useLocation, useNavigate } from "react-router-dom";
 import {
   DataCalenderShell,
   DataNewsScroller,
   DataVersionLabel,
 } from "./game/data-components";
+import CreateGameView from "./game/landing/views/createGameView/createGameView";
+import LandingView from "./game/landing/views/landingView/landingView";
+import PlayerDetailView from "./game/players/views/playerDetailView/playerDetailView";
 import {
   BgSwitcher,
   Layout,
   PrevNextButtons,
   SidebarShell,
 } from "./shared/components";
-
-const LandingView = lazy(
-  () => import("./game/landing/views/landingView/landingView")
-);
-const CreateGameView = lazy(
-  () => import("./game/landing/views/createGameView/createGameView")
-);
-const PlayerDetailView = lazy(
-  () => import("./game/players/views/playerDetailView/playerDetailView")
-);
 
 export function App() {
   const location = useLocation();

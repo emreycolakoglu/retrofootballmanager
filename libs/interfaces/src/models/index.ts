@@ -6,3 +6,5 @@ export * from "./club";
 export * from "./colors";
 export * from "./game";
 export * from "./news";
+export * from "./staff";
+export * from "./contract";
