@@ -1,4 +1,4 @@
-import { lazy } from "react";
+import { lazy, Suspense } from "react";
 import { Route, Routes, useLocation, useNavigate } from "react-router-dom";
 import {
   DataCalenderShell,
@@ -45,11 +45,13 @@ export function App() {
           </SidebarShell>
         }
       >
-        <Routes>
-          <Route path="/" element={<LandingView />} />
-          <Route path="/new" element={<CreateGameView />} />
-          <Route path="/player/:id/*" element={<PlayerDetailView />} />
-        </Routes>
+        <Suspense fallback={<div>Loading...</div>}>
+          <Routes>
+            <Route path="/" element={<LandingView />} />
+            <Route path="/new" element={<CreateGameView />} />
+            <Route path="/player/:id/*" element={<PlayerDetailView />} />
+          </Routes>
+        </Suspense>
       </Layout>
     </BgSwitcher>
   );
