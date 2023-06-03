@@ -9,6 +9,7 @@ import {
   NewsModel,
   StaffModel,
   ContractModel,
+  LanguageModel,
 } from "@rfm/interfaces";
 import Dexie from "dexie";
 
@@ -24,10 +25,11 @@ class RFMDatabase extends Dexie {
   colors!: Dexie.Table<ColorModel.Base, number>;
   game!: Dexie.Table<GameModel.Base, number>;
   news!: Dexie.Table<NewsModel.Base, number>;
+  languages!: Dexie.Table<LanguageModel.Base, number>;
 
   constructor() {
     super("rfm");
-    this.version(5).stores({
+    this.version(6).stores({
       players: "++id",
       staff: "++id",
       clubs: "++id",
@@ -39,6 +41,7 @@ class RFMDatabase extends Dexie {
       colors: "++id",
       game: "++id",
       news: "++id",
+      languages: "++id",
     });
   }
 }

@@ -8,3 +8,4 @@ export * from "./game";
 export * from "./news";
 export * from "./staff";
 export * from "./contract";
+export * from "./languages";

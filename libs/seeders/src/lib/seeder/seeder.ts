@@ -3,6 +3,7 @@ import { seedColors } from "../colors";
 import { seedContinents } from "../continent";
 import { seedCountries } from "../countries";
 import { seedNews } from "../news";
+import { seedLanguages } from "../languages";
 
 export async function seedData() {
   const existingContinentCount = await db.continents.count();
@@ -24,4 +25,6 @@ export async function seedData() {
   if (!existingNewsCount) {
     await seedNews();
   }
+
+  await seedLanguages();
 }
