@@ -14,6 +14,7 @@ import {
 } from "./interfaces";
 import { random } from "@rfm/utility";
 import { PlayerModel } from "@rfm/interfaces";
+import { getRandomFullname } from "../common";
 
 export function generatePlayer(options: IPlayerFormula): PlayerModel.Base {
   const { nationality, quality, style, position, clubId, ageTemplate } =
@@ -29,10 +30,7 @@ export function generatePlayer(options: IPlayerFormula): PlayerModel.Base {
     positionTemplates[position || random.getRandomInArray(PlayerPositionArray)];
   const reputationTemplate = reputationTemplates[qualityVal];
 
-  // TODO fix name generation
-  // const { firstName, lastName } = getPlayerName(
-  //   nationality.abbrevation.toString()
-  // );
+  const { firstName, lastName } = getRandomFullname(nationality);
 
   const age = random.getBetween(ageTemplate.min, ageTemplate.max);
   const technical = buildSkillsForPlayer<PlayerModel.TechnicalSkills>(
@@ -62,8 +60,8 @@ export function generatePlayer(options: IPlayerFormula): PlayerModel.Base {
   };
 
   return {
-    firstName: "",
-    lastName: "",
+    firstName,
+    lastName,
     age,
     nationality: nationality.name,
     technical,

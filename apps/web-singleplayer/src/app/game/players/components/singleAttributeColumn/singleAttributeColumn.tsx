@@ -6,7 +6,7 @@ import styles from "./singleAttributeColumn.module.scss";
 export const SingleAttributeInColumn = (props: Props): ReactElement => {
   //const { t } = useTranslation("cm");
 
-  console.log(props.kind);
+  // console.log(props.kind);
 
   const excpCssClassDict = {
     physical: "excpPhy",

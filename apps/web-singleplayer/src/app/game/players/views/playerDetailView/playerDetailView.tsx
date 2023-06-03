@@ -32,7 +32,7 @@ export default function PlayerDetailView() {
   return (
     <>
       <Header backgroundColor="#FFFFFF" textColor="#000000">
-        <HeaderPrimaryLine title="hello" />
+        <HeaderPrimaryLine title={`${player.firstName} ${player.lastName}`} />
       </Header>
 
       <PlayerDetailTopBar player={player} />

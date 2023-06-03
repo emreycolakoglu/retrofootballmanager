@@ -1,1 +1,2 @@
-export const sth = "anything";
+export * from "./lib/firstnames";
+export * from "./lib/lastnames";
