@@ -15,6 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@rfm/data-generators": ["libs/data-generators/src/index.ts"],
       "@rfm/dexie-database": ["libs/dexie-database/src/index.ts"],
       "@rfm/factories": ["libs/factories/src/index.ts"],
       "@rfm/fifa-stats-downloader": ["libs/fifa-stats-downloader/src/index.ts"],
