@@ -4,9 +4,11 @@ export namespace CountryModel {
     name: string;
     alpha2Code: string;
     alpha3Code: string;
-    continentId: number;
+    continent: string;
     prestige: number;
     availableToPlay: boolean;
     flag?: string;
+    languages: string[];
+    currencies: string[];
   }
 }

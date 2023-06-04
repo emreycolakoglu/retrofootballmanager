@@ -18,7 +18,10 @@ export default function CreateGameView() {
     homeSecondary: "#FFFFFF",
   });
   const colors = useLiveQuery(() => db.colors.toArray(), []);
-  const countries = useLiveQuery(() => db.countries.toArray(), []);
+  const countries = useLiveQuery(
+    () => db.countries.filter((x) => x.availableToPlay).toArray(),
+    []
+  );
 
   return (
     <>
@@ -160,15 +163,15 @@ export default function CreateGameView() {
                   //   });
                   // }}
                 >
-                  {/* {colors.map((c, i) => (
-                  <option
-                    key={i}
-                    value={c.value}
-                    disabled={c.value == request.awaySecondary}
-                  >
-                    {c.name}
-                  </option>
-                ))} */}
+                  {colors?.map((c, i) => (
+                    <option
+                      key={i}
+                      value={c.value}
+                      disabled={c.value == request.awaySecondary}
+                    >
+                      {c.name}
+                    </option>
+                  ))}
                 </Select>
                 <Select
                   label="* Secondary *"
@@ -181,15 +184,15 @@ export default function CreateGameView() {
                   //   });
                   // }}
                 >
-                  {/* {colors.map((c, i) => (
-                  <option
-                    key={i}
-                    value={c.value}
-                    disabled={c.value == request.awayMain}
-                  >
-                    {c.name}
-                  </option>
-                ))} */}
+                  {colors?.map((c, i) => (
+                    <option
+                      key={i}
+                      value={c.value}
+                      disabled={c.value == request.awayMain}
+                    >
+                      {c.name}
+                    </option>
+                  ))}
                 </Select>
               </PanelWithTitle>
 

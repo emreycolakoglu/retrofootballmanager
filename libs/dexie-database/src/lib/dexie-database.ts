@@ -35,13 +35,13 @@ class RFMDatabase extends Dexie {
       clubs: "++id",
       playerContracts: "++id",
       staffContracts: "++id",
-      continents: "++id",
-      countries: "++id",
+      continents: "key",
+      countries: "alpha3Code",
       cities: "++id",
       colors: "++id",
       game: "++id",
       news: "++id",
-      languages: "++id",
+      languages: "key",
     });
   }
 }

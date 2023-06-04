@@ -11,7 +11,7 @@ export async function seedLanguages(): Promise<void> {
     if (l) {
       for (const key in l) {
         languagesIterated.push({
-          key,
+          key: key.toUpperCase(),
           value: l[key],
         });
       }

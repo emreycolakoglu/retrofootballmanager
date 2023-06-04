@@ -3,5 +3,6 @@ export namespace ContinentModel {
     id?: number;
     name: string;
     prestige: number;
+    key: string;
   }
 }
