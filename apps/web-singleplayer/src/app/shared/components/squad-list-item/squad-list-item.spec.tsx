@@ -6,7 +6,7 @@ import {
   PlayerQuality,
   PlayerStyle,
   generatePlayer,
-} from "@rfm/generators";
+} from "@rfm/factories";
 import { Button } from "../button/button";
 
 describe("SquadListItem", () => {

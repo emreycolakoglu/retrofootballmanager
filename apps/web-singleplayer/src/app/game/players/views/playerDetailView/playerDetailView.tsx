@@ -3,7 +3,7 @@ import {
   PlayerPosition,
   PlayerQuality,
   PlayerStyle,
-} from "@rfm/generators";
+} from "@rfm/factories";
 import { Header, HeaderPrimaryLine } from "../../../../shared/components";
 import { PlayerDetailTopBar } from "../../components/playerDetailTopBar/playerDetailTopBar";
 import { Route, Routes } from "react-router-dom";

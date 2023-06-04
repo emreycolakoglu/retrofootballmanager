@@ -1,21 +1,21 @@
 {
-  "name": "generators",
+  "name": "factories",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "libs/generators/src",
+  "sourceRoot": "libs/factories/src",
   "projectType": "library",
   "targets": {
     "lint": {
       "executor": "@nx/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["libs/generators/**/*.ts"]
+        "lintFilePatterns": ["libs/factories/**/*.ts"]
       }
     },
     "test": {
       "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
-        "jestConfig": "libs/generators/jest.config.ts",
+        "jestConfig": "libs/factories/jest.config.ts",
         "passWithNoTests": true
       },
       "configurations": {
