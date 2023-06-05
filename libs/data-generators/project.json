@@ -16,7 +16,8 @@
       "options": {
         "commands": [
           "ts-node countryGenerators/countryGenerator.ts",
-          "ts-node languageGenerators/languageGenerator.ts"
+          "ts-node languageGenerators/languageGenerator.ts",
+          "ts-node nameGenerators/nameGenerator.ts"
         ],
         "cwd": "libs/data-generators/src/lib"
       }

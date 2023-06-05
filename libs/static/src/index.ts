@@ -1,2 +1,2 @@
-export * from "./lib/firstnames";
-export * from "./lib/lastnames";
+export * from "./raw/firstnames";
+export * from "./raw/lastnames";

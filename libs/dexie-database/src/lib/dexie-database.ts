@@ -19,13 +19,15 @@ class RFMDatabase extends Dexie {
   clubs!: Dexie.Table<ClubModel.Base, number>;
   playerContracts!: Dexie.Table<ContractModel.PlayerContract, number>;
   staffContracts!: Dexie.Table<ContractModel.StaffContract, number>;
-  continents!: Dexie.Table<ContinentModel.Base, number>;
-  countries!: Dexie.Table<CountryModel.Base, number>;
+  continents!: Dexie.Table<ContinentModel.Base, string>;
+  countries!: Dexie.Table<CountryModel.Base, string>;
   cities!: Dexie.Table<CityModel.Base, number>;
   colors!: Dexie.Table<ColorModel.Base, number>;
   game!: Dexie.Table<GameModel.Base, number>;
   news!: Dexie.Table<NewsModel.Base, number>;
-  languages!: Dexie.Table<LanguageModel.Base, number>;
+  languages!: Dexie.Table<LanguageModel.Base, string>;
+  firstNames!: Dexie.Table<{ language: string; value: string }, number>;
+  lastNames!: Dexie.Table<{ language: string; value: string }, number>;
 
   constructor() {
     super("rfm");
@@ -42,6 +44,8 @@ class RFMDatabase extends Dexie {
       game: "++id",
       news: "++id",
       languages: "key",
+      firstNames: "++id",
+      lastNames: "++id",
     });
   }
 }
