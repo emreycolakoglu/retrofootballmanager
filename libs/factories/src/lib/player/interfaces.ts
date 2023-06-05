@@ -7,6 +7,8 @@ export interface IPlayerFormula {
   quality?: PlayerQuality;
   ageTemplate?: { min: number; max: number };
   clubId?: string;
+  firstNames?: string[];
+  lastNames?: string[];
 }
 
 export const technicalSkillList = [

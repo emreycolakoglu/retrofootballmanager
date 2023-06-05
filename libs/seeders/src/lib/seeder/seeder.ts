@@ -4,6 +4,7 @@ import { seedContinents } from "../continent";
 import { seedCountries } from "../countries";
 import { seedNews } from "../news";
 import { seedLanguages } from "../languages";
+import { seedNames } from "../names";
 
 export async function seedData() {
   const existingContinentCount = await db.continents.count();
@@ -29,5 +30,10 @@ export async function seedData() {
   const existingLanguageCount = await db.languages.count();
   if (!existingLanguageCount) {
     await seedLanguages();
+  }
+
+  const existingFirstNameCount = await db.firstNames.count();
+  if (!existingFirstNameCount) {
+    await seedNames();
   }
 }
