@@ -1,4 +1,4 @@
-import { writeFile, writeFileSync } from "node:fs";
+import { writeFileSync } from "node:fs";
 
 export async function generateCountryData() {
   const rawResponse = await fetch("https://restcountries.com/v3.1/all", {
@@ -7,8 +7,6 @@ export async function generateCountryData() {
     },
   });
   const countries: any[] = await rawResponse.json();
-
-  console.log("zaasadas");
 
   const dbCounries: any[] = countries.map((c) => {
     const currencies = c.currencies
@@ -32,16 +30,9 @@ export async function generateCountryData() {
     };
   });
 
-  console.log(JSON.stringify(dbCounries));
-
   writeFileSync(
-    // path.resolve(
-    //   __dirname,
-    //   "../../../../static/src/lib/countries/countries.json"
-    // ),
-    "countries.json",
-    // JSON.stringify(dbCounries),
-    "asdasdasda",
+    "../../../static/src/lib/countries/countries.json",
+    JSON.stringify(dbCounries),
     {
       encoding: "utf-8",
     }
