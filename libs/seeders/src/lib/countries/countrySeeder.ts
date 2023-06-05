@@ -1,34 +1,28 @@
 import { CountryModel } from "@rfm/interfaces";
-import { fetchRestCountries, RestCountries } from "../restCountries";
 import db from "@rfm/dexie-database";
 
 export async function seedCountries(): Promise<void> {
-  const countries = await fetchRestCountries();
+  const countries: any[] = await fetch(
+    "https://raw.githubusercontent.com/emreycolakoglu/retrofootballmanager/main/libs/static/src/lib/countries/countries.json"
+  ).then((response) => response.json());
 
   const continents = await db.continents.toArray();
 
   // TODO fix when going live
   const dbCounries: CountryModel.Base[] = countries.map((c) => {
-    const continent = continents.find((x) => x.name == c.continents.at(0));
-    const currencies = c.currencies
-      ? Object.keys(c.currencies).map((t) => t)
-      : [];
-    const languages = c.languages
-      ? Object.keys(c.languages).map((x) => x.toUpperCase())
-      : [];
+    const continent = continents.find((x) => x.name == c.continent);
 
     return {
-      name: c.name.common,
-      alpha2Code: c.cca2,
-      alpha3Code: c.cca3,
-      availableToPlay:
-        c.continents.indexOf(RestCountries.Continent.Europe) > -1,
+      name: c.name,
+      alpha2Code: c.alpha2Code,
+      alpha3Code: c.alpha3Code,
+      availableToPlay: c.availableToPlay,
       continent: continent.key,
-      flag: c.flags.svg,
+      flag: c.flag,
       // TODO fix properly
       prestige: 0,
-      currencies,
-      languages,
+      currencies: c.currencies,
+      languages: c.languages,
     };
   });
 
