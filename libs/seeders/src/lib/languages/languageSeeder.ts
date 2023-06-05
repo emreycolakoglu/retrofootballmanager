@@ -1,24 +1,9 @@
-import { fetchRestCountries } from "../restCountries";
 import db from "@rfm/dexie-database";
-import { uniqBy } from "lodash-es";
 
 export async function seedLanguages(): Promise<void> {
-  const countries = await fetchRestCountries();
-
-  const languageList = countries.map((c) => c.languages);
-  const languagesIterated: { key: string; value: string }[] = [];
-  languageList.map((l) => {
-    if (l) {
-      for (const key in l) {
-        languagesIterated.push({
-          key: key.toUpperCase(),
-          value: l[key],
-        });
-      }
-    }
-  });
-
-  const uniqueLanguages = uniqBy(languagesIterated, "key");
+  const uniqueLanguages = await fetch(
+    "https://raw.githubusercontent.com/emreycolakoglu/retrofootballmanager/main/libs/static/src/lib/languages/languages.json"
+  ).then((response) => response.json());
 
   await db.languages.bulkPut(
     uniqueLanguages.map((x) => ({

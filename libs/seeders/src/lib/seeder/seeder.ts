@@ -26,5 +26,8 @@ export async function seedData() {
     await seedNews();
   }
 
-  await seedLanguages();
+  const existingLanguageCount = await db.languages.count();
+  if (!existingLanguageCount) {
+    await seedLanguages();
+  }
 }
