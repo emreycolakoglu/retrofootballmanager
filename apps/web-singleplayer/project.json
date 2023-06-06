@@ -66,6 +66,13 @@
       "options": {
         "lintFilePatterns": ["apps/web-singleplayer/**/*.{ts,tsx,js,jsx}"]
       }
+    },
+    "stats": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": ["npx vite-bundle-visualizer"],
+        "cwd": "apps/web-singleplayer/"
+      }
     }
   },
   "tags": ["app"]
