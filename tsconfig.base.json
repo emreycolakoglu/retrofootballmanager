@@ -15,21 +15,19 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@rfm/data-generators": ["libs/data-generators/src/index.ts"],
       "@rfm/dexie-database": ["libs/dexie-database/src/index.ts"],
-      "@rfm/factories": ["libs/factories/src/index.ts"],
-      "@rfm/fifa-stats-downloader": ["libs/fifa-stats-downloader/src/index.ts"],
-      "@rfm/fifa-to-fm-stats-converter": [
-        "libs/fifa-to-fm-stats-converter/src/index.ts"
-      ],
-      "@rfm/interfaces": ["libs/interfaces/src/index.ts"],
-      "@rfm/seeders": ["libs/seeders/src/index.ts"],
       "@rfm/static": ["libs/static/src/index.ts"],
-      "@rfm/utility": ["libs/utility/src/index.ts"],
-      "@rfm/web-club-detail": ["libs/web-club-detail/src/index.ts"],
-      "@rfm/web-components": ["libs/web-components/src/index.ts"],
-      "@rfm/web-landing-single": ["libs/web-landing-single/src/index.ts"],
-      "@rfm/web-player-detail": ["libs/web-player-detail/src/index.ts"]
+      "@rfm/ui-club-detail": ["libs/ui-club-detail/src/index.ts"],
+      "@rfm/ui-components": ["libs/ui-components/src/index.ts"],
+      "@rfm/ui-landing": ["libs/ui-landing/src/index.ts"],
+      "@rfm/ui-player-detail": ["libs/ui-player-detail/src/index.ts"],
+      "@rfm/utility-common": ["libs/utility-common/src/index.ts"],
+      "@rfm/utility-data-generators": [
+        "libs/utility-data-generators/src/index.ts"
+      ],
+      "@rfm/utility-factories": ["libs/utility-factories/src/index.ts"],
+      "@rfm/utility-interfaces": ["libs/utility-interfaces/src/index.ts"],
+      "@rfm/utility-seeders": ["libs/utility-seeders/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

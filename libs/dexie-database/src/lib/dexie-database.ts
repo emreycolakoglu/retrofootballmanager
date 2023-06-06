@@ -10,7 +10,7 @@ import {
   StaffModel,
   ContractModel,
   LanguageModel,
-} from "@rfm/interfaces";
+} from "@rfm/utility-interfaces";
 import Dexie from "dexie";
 
 class RFMDatabase extends Dexie {

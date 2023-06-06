@@ -1,11 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
 /* You can add global styles to this file, and also import other style files */
 
-@import "../../../libs/web-components/src/ui-mixins/reset";
-@import "../../../libs/web-components/src/ui-mixins/_fonts.scss";
-@import "../../../libs/web-components/src/ui-mixins/_variables.scss";
-@import "../../../libs/web-components/src/ui-mixins/_mixins.scss";
-@import "../../../libs/web-components/src/ui-mixins/_grid.scss";
+@import "../../../libs/ui-components/src/ui-mixins/reset";
+@import "../../../libs/ui-components/src/ui-mixins/_fonts.scss";
+@import "../../../libs/ui-components/src/ui-mixins/_variables.scss";
+@import "../../../libs/ui-components/src/ui-mixins/_mixins.scss";
+@import "../../../libs/ui-components/src/ui-mixins/_grid.scss";
 
 * {
   -webkit-font-smoothing: antialiased;

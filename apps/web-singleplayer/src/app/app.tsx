@@ -10,7 +10,7 @@ import {
   Layout,
   PrevNextButtons,
   SidebarShell,
-} from "@rfm/web-components";
+} from "@rfm/ui-components";
 
 const LandingView = lazy(
   () => import("./game/landing/views/landingView/landingView")

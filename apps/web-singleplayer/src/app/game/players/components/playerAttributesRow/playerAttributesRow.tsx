@@ -1,4 +1,4 @@
-import { PlayerModel } from "@rfm/interfaces";
+import { PlayerModel } from "@rfm/utility-interfaces";
 import classNames from "classnames";
 import { PlayerAttributesColumn } from "../playerAttributesColumn/playerAttributesColumn";
 import styles from "./playerAttributesRow.module.scss";

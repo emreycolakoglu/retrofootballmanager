@@ -1,4 +1,4 @@
-import { CalenderShell, CalenderShellProps } from "@rfm/web-components";
+import { CalenderShell, CalenderShellProps } from "@rfm/ui-components";
 import dayjs from "dayjs";
 
 export function DataCalenderShell(props: CalenderShellProps) {

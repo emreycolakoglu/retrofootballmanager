@@ -6,7 +6,7 @@ import {
   HeaderPrimaryLine,
   HeaderSecondaryLine,
   PanelWithTitle,
-} from "@rfm/web-components";
+} from "@rfm/ui-components";
 import styles from "./landingView.module.scss";
 
 export default function LandingView() {

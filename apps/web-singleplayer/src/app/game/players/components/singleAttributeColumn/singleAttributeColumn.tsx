@@ -1,4 +1,4 @@
-import { PlayerModel } from "@rfm/interfaces";
+import { PlayerModel } from "@rfm/utility-interfaces";
 import classNames from "classnames";
 import React, { ReactElement } from "react";
 import styles from "./singleAttributeColumn.module.scss";

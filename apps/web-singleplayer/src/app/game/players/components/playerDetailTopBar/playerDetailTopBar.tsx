@@ -1,9 +1,9 @@
-import { PlayerModel } from "@rfm/interfaces";
+import { PlayerModel } from "@rfm/utility-interfaces";
 import classNames from "classnames";
 import { ReactElement } from "react";
 import { useTranslation } from "react-i18next";
 import { NavLink } from "react-router-dom";
-import { ButtonGroup } from "@rfm/web-components";
+import { ButtonGroup } from "@rfm/ui-components";
 import styles from "./playerDetailTopBar.module.scss";
 
 export const PlayerDetailTopBar = (props: Props): ReactElement => {

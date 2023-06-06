@@ -9,7 +9,7 @@ import {
   Select,
   PanelWithTitle,
   Button,
-} from "@rfm/web-components";
+} from "@rfm/ui-components";
 import styles from "./createGameView.module.scss";
 
 export default function CreateGameView() {

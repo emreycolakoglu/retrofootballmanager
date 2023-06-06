@@ -3,8 +3,8 @@ import {
   PlayerPosition,
   PlayerQuality,
   PlayerStyle,
-} from "@rfm/factories";
-import { Header, HeaderPrimaryLine } from "@rfm/web-components";
+} from "@rfm/utility-factories";
+import { Header, HeaderPrimaryLine } from "@rfm/ui-components";
 import { PlayerDetailTopBar } from "../../components/playerDetailTopBar/playerDetailTopBar";
 import { Route, Routes } from "react-router-dom";
 import { PlayerAttributesRow } from "../../components/playerAttributesRow/playerAttributesRow";

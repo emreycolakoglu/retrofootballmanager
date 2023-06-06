@@ -1,4 +1,4 @@
-import { seedData } from "@rfm/seeders";
+import { seedData } from "@rfm/utility-seeders";
 import { StrictMode } from "react";
 import * as ReactDOM from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
