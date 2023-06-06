@@ -26,8 +26,10 @@
       "@rfm/seeders": ["libs/seeders/src/index.ts"],
       "@rfm/static": ["libs/static/src/index.ts"],
       "@rfm/utility": ["libs/utility/src/index.ts"],
+      "@rfm/web-club-detail": ["libs/web-club-detail/src/index.ts"],
       "@rfm/web-components": ["libs/web-components/src/index.ts"],
-      "@rfm/web-landing-single": ["libs/web-landing-single/src/index.ts"]
+      "@rfm/web-landing-single": ["libs/web-landing-single/src/index.ts"],
+      "@rfm/web-player-detail": ["libs/web-player-detail/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
