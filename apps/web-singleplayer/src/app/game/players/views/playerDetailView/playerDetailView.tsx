@@ -4,7 +4,7 @@ import {
   PlayerQuality,
   PlayerStyle,
 } from "@rfm/factories";
-import { Header, HeaderPrimaryLine } from "../../../../shared/components";
+import { Header, HeaderPrimaryLine } from "@rfm/web-components";
 import { PlayerDetailTopBar } from "../../components/playerDetailTopBar/playerDetailTopBar";
 import { Route, Routes } from "react-router-dom";
 import { PlayerAttributesRow } from "../../components/playerAttributesRow/playerAttributesRow";

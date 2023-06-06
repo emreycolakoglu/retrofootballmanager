@@ -3,7 +3,7 @@ import classNames from "classnames";
 import { ReactElement } from "react";
 import { useTranslation } from "react-i18next";
 import { NavLink } from "react-router-dom";
-import { ButtonGroup } from "../../../../shared/components";
+import { ButtonGroup } from "@rfm/web-components";
 import styles from "./playerDetailTopBar.module.scss";
 
 export const PlayerDetailTopBar = (props: Props): ReactElement => {

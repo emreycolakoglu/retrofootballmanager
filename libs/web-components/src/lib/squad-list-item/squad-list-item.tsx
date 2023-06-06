@@ -1,4 +1,4 @@
-import { IPlayer } from "@futbolico/utility-game-models";
+import { PlayerModel } from "@rfm/interfaces";
 import { ReactNode, useMemo } from "react";
 import { Link } from "react-router-dom";
 import styles from "./squad-list-item.module.scss";
@@ -7,7 +7,7 @@ import styles from "./squad-list-item.module.scss";
 export interface SquadListItemProps {
   buttonNode: ReactNode;
   statusNode?: ReactNode;
-  player: IPlayer;
+  player: PlayerModel.Base;
 }
 
 export function SquadListItem(props: SquadListItemProps) {
@@ -31,7 +31,9 @@ export function SquadListItem(props: SquadListItemProps) {
   );
 }
 
-function calculatePlayerPositionLabel(position: IPlayer["position"]): string {
+function calculatePlayerPositionLabel(
+  position: PlayerModel.Base["position"]
+): string {
   const positions: string[] = [];
   const sides: string[] = [];
 

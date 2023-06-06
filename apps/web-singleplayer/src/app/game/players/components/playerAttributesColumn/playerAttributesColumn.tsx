@@ -1,5 +1,5 @@
 import { PlayerModel } from "@rfm/interfaces";
-import { PanelWithTitle } from "../../../../shared/components";
+import { PanelWithTitle } from "@rfm/web-components";
 import React, { ReactElement } from "react";
 import { SingleAttributeInColumn } from "../singleAttributeColumn/singleAttributeColumn";
 

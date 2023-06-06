@@ -1,4 +1,4 @@
-import { VersionLabel } from "../../../shared/components";
+import { VersionLabel } from "@rfm/web-components";
 import versionData from "../../../../../gameVersion";
 
 export function DataVersionLabel() {
