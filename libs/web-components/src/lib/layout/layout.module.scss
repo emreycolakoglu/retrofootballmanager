@@ -1,0 +1,31 @@
+@import "../../ui-mixins/_mixins.scss";
+
+.layout {
+  @include fullWH();
+
+  display: grid;
+  grid-template-columns: 103px 1fr;
+  grid-template-areas:
+    "sidebar content"
+    "sidebar footer";
+  grid-gap: 0px 0px;
+}
+
+.sidebar {
+  grid-area: sidebar;
+  min-width: 0;
+}
+
+.content {
+  grid-area: content;
+  min-width: 0;
+  height: calc(100vh - 40px);
+  max-height: calc(100vh - 40px);
+  padding: 3px 4px 2px;
+}
+
+.footer {
+  grid-area: footer;
+  min-width: 0;
+  padding: 2px 4px;
+}

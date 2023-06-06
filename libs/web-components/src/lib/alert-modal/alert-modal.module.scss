@@ -1,0 +1,42 @@
+@import "../../ui-mixins/_variables.scss";
+@import "../../ui-mixins/_mixins.scss";
+@import "../../ui-mixins/_buttons.scss";
+
+.errorModal {
+  @include gradient($blueButtonStart, $blueButtonEnd);
+  @include buttonShadow($blueButtonStart, $blueButtonEnd);
+  color: #fff;
+  border-radius: 10px;
+  min-height: 160px;
+  height: 160px;
+  min-width: 300px;
+  padding: 0px 4px 4px;
+}
+
+.container {
+  height: 75%;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  margin-top: auto;
+  justify-content: flex-end;
+  align-items: center;
+  height: 25%;
+}
+
+.button {
+  @include buttonBase();
+  @include buttonBlue();
+
+  min-height: 30px;
+  height: 30px;
+  width: auto;
+  padding: 0 12px;
+  border-radius: 28px;
+
+  & + .button {
+    margin-left: 8px;
+  }
+}

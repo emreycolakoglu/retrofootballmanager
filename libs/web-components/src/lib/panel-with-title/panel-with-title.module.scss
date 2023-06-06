@@ -1,0 +1,31 @@
+@import "../../ui-mixins/_variables.scss";
+
+.fieldset {
+  border: 1px solid rgba($white, 0.4);
+  border-radius: 9px;
+  padding: 10px;
+  //height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: rgba($white, 0.1);
+
+  legend {
+    color: #ffff33;
+    padding: 0 6px;
+    text-shadow: 2px 2px 1px rgba($black, 0.15);
+    font-size: 1.25rem;
+
+    &.center {
+      width: auto;
+      margin: 0 auto;
+    }
+
+    &.small {
+      font-size: 16px;
+    }
+  }
+
+  & + fieldset {
+    margin-top: 4px;
+  }
+}

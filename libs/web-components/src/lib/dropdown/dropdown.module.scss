@@ -1,0 +1,60 @@
+@import "../../ui-mixins/_variables.scss";
+@import "../../ui-mixins/_mixins.scss";
+
+.contentContainer {
+  appearance: none;
+  @include usePlaid(#485f7f);
+  border-radius: 6px;
+  overflow: hidden;
+  width: 100%;
+  border: none;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: inherit;
+  border-radius: 6px;
+}
+
+.innerContentWrapper {
+  width: 100%;
+  position: relative;
+
+  background: linear-gradient(
+    90deg,
+    rgba(75, 99, 139, 0.1) 0%,
+    rgba(75, 99, 139, 0.9) 45%
+  );
+
+  box-shadow: 1px 1px 2px 0px rgba(255, 255, 255, 0.45) inset,
+    0px -1px 3px 0px rgba(0, 0, 0, 0.85) inset;
+}
+
+.itemContainer {
+  user-select: none;
+  font-size: 13px;
+  line-height: 21px;
+  padding: 0px 7px;
+
+  &:first-child {
+    padding-top: 7.5px;
+  }
+  &:last-child {
+    padding-bottom: 7.5px;
+  }
+
+  &:hover {
+    color: $titleYellow;
+    background-color: rgba($white, 0.05);
+  }
+
+  & + .itemContainer {
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+  }
+}
+
+.seperator {
+  height: 2px;
+  background-color: #394c65;
+  border-bottom: 1px solid #6c7f98;
+  margin: 0 3px;
+  display: block;
+}
