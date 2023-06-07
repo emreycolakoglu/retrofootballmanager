@@ -19,8 +19,7 @@ export async function seedCountries(): Promise<void> {
       availableToPlay: c.availableToPlay,
       continent: continent.key,
       flag: c.flag,
-      // TODO fix properly
-      prestige: 0,
+      prestige: c.prestige,
       currencies: c.currencies,
       languages: c.languages,
     };
