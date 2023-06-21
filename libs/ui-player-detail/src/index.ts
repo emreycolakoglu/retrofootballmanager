@@ -1,1 +1,1 @@
-export * from "./lib/web-player-detail";
+export * from "./lib/services";

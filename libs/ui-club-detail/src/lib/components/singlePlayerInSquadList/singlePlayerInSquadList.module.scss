@@ -1,0 +1,55 @@
+@import "../../../../../ui-components/src/ui-mixins/variables";
+@import "../../../../../ui-components/src/ui-mixins/grid";
+
+.single-player-in-squad-list {
+  display: flex;
+  flex-direction: row;
+  @include make-col(6, 12);
+  padding: 0 8px;
+  align-items: center;
+  height: 22px;
+  margin-bottom: 1px;
+  user-select: none;
+
+  &:nth-child(4n + 1),
+  &:nth-child(4n + 2) {
+    background-color: rgba($black, 0.1);
+  }
+
+  .selection-button-wrapper {
+    width: 40px;
+
+    button {
+      min-height: 22px;
+      height: 22px;
+      border-radius: 5px;
+    }
+  }
+
+  .player-detail-link {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-decoration: none;
+  }
+
+  .status-wrapper {
+    width: 40px;
+    padding: 0 5px;
+
+    button {
+      width: 30px;
+    }
+  }
+
+  .player-name {
+    font-size: 15px;
+  }
+
+  .player-position {
+    font-size: 14px;
+    margin-left: auto;
+    color: $titleYellow;
+  }
+}

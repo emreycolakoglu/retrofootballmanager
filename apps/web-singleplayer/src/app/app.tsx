@@ -11,6 +11,7 @@ import {
   PrevNextButtons,
   SidebarShell,
 } from "@rfm/ui-components";
+import { ClubDetailView } from "@rfm/ui-club-detail";
 
 const LandingView = lazy(
   () => import("./game/landing/views/landingView/landingView")
@@ -50,6 +51,7 @@ export function App() {
             <Route path="/" element={<LandingView />} />
             <Route path="/new" element={<CreateGameView />} />
             <Route path="/player/:id/*" element={<PlayerDetailView />} />
+            <Route path="/club/:id/*" element={<ClubDetailView />} />
           </Routes>
         </Suspense>
       </Layout>

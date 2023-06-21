@@ -1,1 +1,2 @@
-export * from "./lib/web-club-detail";
+export * from "./lib/components";
+export * from "./lib/views";
