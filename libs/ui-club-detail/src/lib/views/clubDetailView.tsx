@@ -3,21 +3,16 @@ import { Route, RouteProps, Routes, useLocation } from "react-router-dom";
 import ClubDetailTopBar from "../components/clubDetailTopBar/clubDetailTopBar";
 import { ClubSquadView } from "./clubSquadView";
 import db from "@rfm/dexie-database";
-import {
-  generatePlayer,
-  PlayerPosition,
-  PlayerStyle,
-  PlayerQuality,
-} from "@rfm/utility-factories";
+import { generateStarterFirstTeamSquad } from "@rfm/utility-factories";
 
 export const ClubDetailView = (props: RouteProps): ReactElement => {
   const club = {
     id: 2,
   } as any;
-  const players = [] as any;
+
   const location = useLocation();
 
-  const [player, setPlayer] = useState<any>();
+  const [players, setPlayers] = useState<any>();
 
   useEffect(() => {
     async function generate() {
@@ -27,29 +22,21 @@ export const ClubDetailView = (props: RouteProps): ReactElement => {
       const lastNames = await db.lastNames
         .filter((x) => x.language == "TUR")
         .toArray();
-      const _player = {
-        ...generatePlayer({
-          nationality: {
-            name: "Türkiye",
-            alpha2Code: "TR",
-            alpha3Code: "TRY",
-            availableToPlay: true,
-            continent: "Europe",
-            prestige: 500,
-            languages: [],
-            currencies: [],
-          },
-          ageTemplate: { min: 17, max: 25 },
-          position: PlayerPosition.CENTERBACK,
-          style: PlayerStyle.STRONG_DEFENDER,
-          clubId: "1",
-          quality: PlayerQuality.VERYGOOD,
-          firstNames: firstNames.map((x) => x.value),
-          lastNames: lastNames.map((x) => x.value),
-        }),
-        id: 123,
-      };
-      setPlayer(_player);
+      const _players = generateStarterFirstTeamSquad({
+        firstNames: firstNames.map((f) => f.value),
+        lastNames: lastNames.map((f) => f.value),
+        nationality: {
+          name: "Türkiye",
+          alpha2Code: "TR",
+          alpha3Code: "TRY",
+          availableToPlay: true,
+          continent: "Europe",
+          prestige: 500,
+          languages: [],
+          currencies: [],
+        },
+      });
+      setPlayers(_players);
     }
     generate();
   }, []);
@@ -68,7 +55,7 @@ export const ClubDetailView = (props: RouteProps): ReactElement => {
       <Routes location={location}>
         <Route
           path="/"
-          element={<ClubSquadView club={club} players={[player]} />}
+          element={<ClubSquadView club={club} players={players} />}
         />
         {/* <Route
           path="/club/:id/staff"
