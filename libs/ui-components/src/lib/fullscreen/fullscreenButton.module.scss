@@ -1,0 +1,14 @@
+@import "../../ui-mixins/_variables.scss";
+@import "../../ui-mixins/_mixins.scss";
+@import "../../ui-mixins/_buttons.scss";
+
+.fullscreen {
+  @include buttonBase();
+
+  width: 100%;
+  height: 54px;
+  border-radius: 10px;
+  font-size: 12px;
+
+  @include buttonTransparent();
+}

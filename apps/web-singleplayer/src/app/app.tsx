@@ -7,9 +7,11 @@ import {
 } from "./game/data-components";
 import {
   BgSwitcher,
+  FullscreenButton,
   Layout,
   PrevNextButtons,
   SidebarShell,
+  useFullscreen,
 } from "@rfm/ui-components";
 import { ClubDetailView } from "@rfm/ui-club-detail";
 
@@ -26,36 +28,44 @@ const PlayerDetailView = lazy(
 export function App() {
   const location = useLocation();
   const navigate = useNavigate();
+  const { FullScreenComponent, handle } = useFullscreen();
 
   return (
-    <BgSwitcher history={location.key}>
-      <Layout
-        footerNode={<DataNewsScroller />}
-        sideNode={
-          <SidebarShell>
-            <DataCalenderShell />
-            <PrevNextButtons
-              onPrev={() => {
-                navigate(-1);
-              }}
-              onNext={() => {
-                navigate(1);
-              }}
-            />
-            <DataVersionLabel />
-          </SidebarShell>
-        }
-      >
-        <Suspense fallback={<div>Loading...</div>}>
-          <Routes>
-            <Route path="/" element={<LandingView />} />
-            <Route path="/new" element={<CreateGameView />} />
-            <Route path="/player/:id/*" element={<PlayerDetailView />} />
-            <Route path="/club/:id/*" element={<ClubDetailView />} />
-          </Routes>
-        </Suspense>
-      </Layout>
-    </BgSwitcher>
+    <FullScreenComponent handle={handle}>
+      <BgSwitcher history={location.key}>
+        <Layout
+          footerNode={<DataNewsScroller />}
+          sideNode={
+            <SidebarShell>
+              <DataCalenderShell />
+              <PrevNextButtons
+                onPrev={() => {
+                  navigate(-1);
+                }}
+                onNext={() => {
+                  navigate(1);
+                }}
+              />
+              <FullscreenButton
+                onClick={() => (handle.active ? handle.exit() : handle.enter())}
+              >
+                go full screen
+              </FullscreenButton>
+              <DataVersionLabel />
+            </SidebarShell>
+          }
+        >
+          <Suspense fallback={<div>Loading...</div>}>
+            <Routes>
+              <Route path="/" element={<LandingView />} />
+              <Route path="/new" element={<CreateGameView />} />
+              <Route path="/player/:id/*" element={<PlayerDetailView />} />
+              <Route path="/club/:id/*" element={<ClubDetailView />} />
+            </Routes>
+          </Suspense>
+        </Layout>
+      </BgSwitcher>
+    </FullScreenComponent>
   );
 }
 
