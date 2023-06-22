@@ -1,6 +1,6 @@
 import db from "@rfm/dexie-database";
 import { useLiveQuery } from "dexie-react-hooks";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate, useNavigation } from "react-router-dom";
 import {
   Header,
   HeaderPrimaryLine,
@@ -10,8 +10,14 @@ import {
 import styles from "./landingView.module.scss";
 
 export default function LandingView() {
-  // check if there is a savegame
-  const game = useLiveQuery(() => db.game.get(0));
+  const navigate = useNavigate();
+  const games = useLiveQuery(() => db.games.toArray());
+
+  const handleLoadGame = (e: any) => {
+    e.preventDefault();
+    if (!games || games.length == 0) return;
+    navigate(`/club/${games[0].clubId}`);
+  };
 
   return (
     <>
@@ -26,7 +32,7 @@ export default function LandingView() {
           titleAlign={"left"}
           style={{ marginTop: 8 }}
         >
-          {!game ? (
+          {games?.length == 0 ? (
             <div className="row">
               <div className="col-md-3 offset-md-2">
                 <Link to="/new" className={styles.button}>
@@ -40,7 +46,9 @@ export default function LandingView() {
           ) : (
             <div className="row">
               <div className="col-md-3 offset-md-2">
-                <button className={styles.button}>*Load Game*</button>
+                <button className={styles.button} onClick={handleLoadGame}>
+                  *Load Game*
+                </button>
               </div>
               <div className="col-md-5 offset-md-1">
                 <p className={styles["label"]}>

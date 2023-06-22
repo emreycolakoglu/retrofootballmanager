@@ -23,7 +23,7 @@ class RFMDatabase extends Dexie {
   countries!: Dexie.Table<CountryModel.Base, string>;
   cities!: Dexie.Table<CityModel.Base, number>;
   colors!: Dexie.Table<ColorModel.Base, number>;
-  game!: Dexie.Table<GameModel.Base, number>;
+  games!: Dexie.Table<GameModel.Base, number>;
   news!: Dexie.Table<NewsModel.Base, number>;
   languages!: Dexie.Table<LanguageModel.Base, string>;
   firstNames!: Dexie.Table<{ language: string; value: string }, number>;
@@ -41,7 +41,7 @@ class RFMDatabase extends Dexie {
       countries: "alpha3Code",
       cities: "++id",
       colors: "++id",
-      game: "++id",
+      games: "++id",
       news: "++id",
       languages: "key",
       firstNames: "++id",

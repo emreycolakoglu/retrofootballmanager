@@ -55,6 +55,10 @@ export default function CreateGameView() {
         },
       },
     });
+    const gameId = await db.games.add({
+      currentDate: Date.now(),
+      clubId,
+    });
     const staffId = await db.staff.add({
       age: 22,
       firstName: request.firstName,
