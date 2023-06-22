@@ -15,19 +15,11 @@ import {
 import { random } from "@rfm/utility-common";
 import { PlayerModel } from "@rfm/utility-interfaces";
 
-export function generatePlayer(options: IPlayerFormula): PlayerModel.Base {
-  const {
-    nationality,
-    quality,
-    style,
-    position,
-    clubId,
-    ageTemplate,
-    firstNames,
-    lastNames,
-  } = options;
-
-  if (!nationality) return null;
+export function generatePlayer(
+  options: IPlayerFormula
+): PlayerModel.GeneratorOutcome {
+  const { quality, style, position, ageTemplate, firstNames, lastNames } =
+    options;
 
   const qualityVal = quality || random.getRandomInArray(PlayerQualityArray);
   const qualityTemplate = qualityTemplates[qualityVal];
@@ -71,14 +63,12 @@ export function generatePlayer(options: IPlayerFormula): PlayerModel.Base {
     firstName,
     lastName,
     age,
-    nationality: nationality.name,
     technical,
     mental,
     physical,
     goalkeeping,
     position: p,
     prestige,
-    club: clubId,
   };
 }
 

@@ -4,7 +4,6 @@ import React, { ReactElement } from "react";
 import { SinglePlayerInSquadList } from "../components";
 
 export const ClubSquadView = (props: Props): ReactElement => {
-  console.log(props.players);
   return (
     <div className="row">
       <div className="col-12">
@@ -13,10 +12,7 @@ export const ClubSquadView = (props: Props): ReactElement => {
             {props.players
               ?.filter((p) => !!p)
               ?.map((player, i) => (
-                <SinglePlayerInSquadList
-                  player={{ ...player, id: i }}
-                  key={i}
-                />
+                <SinglePlayerInSquadList player={{ ...player }} key={i} />
               ))}
           </div>
         </PanelWithTitle>
@@ -27,5 +23,5 @@ export const ClubSquadView = (props: Props): ReactElement => {
 
 interface Props {
   club?: ClubModel.Base;
-  players: PlayerModel.Base[];
+  players?: PlayerModel.Base[];
 }

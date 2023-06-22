@@ -11,7 +11,19 @@ export namespace PlayerModel {
     goalkeeping: GoalkeepingSkills;
     position: Position;
     contract?: string;
-    club?: string;
+    club: number;
+    prestige: Prestige;
+  }
+
+  export interface GeneratorOutcome {
+    firstName: string;
+    lastName: string;
+    age: number;
+    technical: TechnicalSkills;
+    mental: MentalSkills;
+    physical: PhysicalSkills;
+    goalkeeping: GoalkeepingSkills;
+    position: Position;
     prestige: Prestige;
   }
 

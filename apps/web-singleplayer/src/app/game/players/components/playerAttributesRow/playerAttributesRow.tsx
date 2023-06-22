@@ -4,6 +4,7 @@ import { PlayerAttributesColumn } from "../playerAttributesColumn/playerAttribut
 import styles from "./playerAttributesRow.module.scss";
 
 export function PlayerAttributesRow(props: Props) {
+  if (!props.player) return <></>;
   return (
     <div className={classNames("row", styles["player-attribute-row"])}>
       <div className="col-4">
@@ -40,5 +41,5 @@ export function PlayerAttributesRow(props: Props) {
 }
 
 interface Props {
-  player: PlayerModel.Base;
+  player?: PlayerModel.Base;
 }

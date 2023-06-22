@@ -2,7 +2,6 @@ export namespace ClubModel {
   export interface Base {
     id?: number;
     name: string;
-    user: string;
     prestige: number;
     colors: {
       homeColors: {

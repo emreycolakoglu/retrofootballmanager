@@ -26,6 +26,7 @@
         "libs/utility-data-generators/src/index.ts"
       ],
       "@rfm/utility-factories": ["libs/utility-factories/src/index.ts"],
+      "@rfm/utility-id-generator": ["libs/utility-id-generator/src/index.ts"],
       "@rfm/utility-interfaces": ["libs/utility-interfaces/src/index.ts"],
       "@rfm/utility-seeders": ["libs/utility-seeders/src/index.ts"]
     }

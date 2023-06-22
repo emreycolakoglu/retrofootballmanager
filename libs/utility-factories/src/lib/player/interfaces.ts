@@ -1,7 +1,4 @@
-import { CountryModel } from "@rfm/utility-interfaces";
-
 export interface IPlayerFormula {
-  nationality?: CountryModel.Base;
   position?: PlayerPosition;
   style?: PlayerStyle;
   quality?: PlayerQuality;

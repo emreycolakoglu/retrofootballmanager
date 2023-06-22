@@ -6,52 +6,26 @@ import {
 } from "@rfm/utility-factories";
 import { Header, HeaderPrimaryLine } from "@rfm/ui-components";
 import { PlayerDetailTopBar } from "../../components/playerDetailTopBar/playerDetailTopBar";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useParams } from "react-router-dom";
 import { PlayerAttributesRow } from "../../components/playerAttributesRow/playerAttributesRow";
 import db from "@rfm/dexie-database";
 import { useEffect, useState } from "react";
+import { useLiveQuery } from "dexie-react-hooks";
 
 export default function PlayerDetailView() {
-  const [player, setPlayer] = useState<any>();
-
-  useEffect(() => {
-    async function generate() {
-      const firstNames = await db.firstNames
-        .filter((x) => x.language == "TUR")
-        .toArray();
-      const lastNames = await db.lastNames
-        .filter((x) => x.language == "TUR")
-        .toArray();
-      const _player = {
-        ...generatePlayer({
-          nationality: {
-            name: "Türkiye",
-            alpha2Code: "TR",
-            alpha3Code: "TRY",
-            availableToPlay: true,
-            continent: "Europe",
-            prestige: 500,
-            languages: [],
-            currencies: [],
-          },
-          ageTemplate: { min: 17, max: 25 },
-          position: PlayerPosition.CENTERBACK,
-          style: PlayerStyle.STRONG_DEFENDER,
-          clubId: "1",
-          quality: PlayerQuality.VERYGOOD,
-          firstNames: firstNames.map((x) => x.value),
-          lastNames: lastNames.map((x) => x.value),
-        }),
-        id: 123,
-      };
-      setPlayer(_player);
-    }
-    generate();
-  }, []);
+  const params = useParams<{ id: string }>();
+  const player = useLiveQuery(
+    () => db.players.get(parseInt(params.id as string)),
+    [params.id]
+  );
+  const club = useLiveQuery(() => db.clubs.get(player?.club || 0), [player]);
 
   return (
     <>
-      <Header backgroundColor="#FFFFFF" textColor="#000000">
+      <Header
+        backgroundColor={club?.colors.homeColors.main}
+        textColor={club?.colors.homeColors.secondary}
+      >
         <HeaderPrimaryLine title={`${player?.firstName} ${player?.lastName}`} />
       </Header>
 

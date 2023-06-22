@@ -1,55 +1,32 @@
 import { ReactElement, useEffect, useState } from "react";
-import { Route, RouteProps, Routes, useLocation } from "react-router-dom";
+import { Route, Routes, useLocation, useParams } from "react-router-dom";
 import ClubDetailTopBar from "../components/clubDetailTopBar/clubDetailTopBar";
 import { ClubSquadView } from "./clubSquadView";
 import db from "@rfm/dexie-database";
-import { generateStarterFirstTeamSquad } from "@rfm/utility-factories";
+import { useLiveQuery } from "dexie-react-hooks";
+import { Header, HeaderPrimaryLine } from "@rfm/ui-components";
 
-export const ClubDetailView = (props: RouteProps): ReactElement => {
-  const club = {
-    id: 2,
-  } as any;
-
+export const ClubDetailView = (): ReactElement => {
+  const params = useParams<{ id: string }>();
+  const club = useLiveQuery(
+    () => db.clubs.get(parseInt(params.id as string)),
+    [params.id]
+  );
+  const players = useLiveQuery(
+    () => db.players.filter((p) => p.club == club?.id).toArray(),
+    [club?.id]
+  );
   const location = useLocation();
 
-  const [players, setPlayers] = useState<any>();
-
-  useEffect(() => {
-    async function generate() {
-      const firstNames = await db.firstNames
-        .filter((x) => x.language == "TUR")
-        .toArray();
-      const lastNames = await db.lastNames
-        .filter((x) => x.language == "TUR")
-        .toArray();
-      const _players = generateStarterFirstTeamSquad({
-        firstNames: firstNames.map((f) => f.value),
-        lastNames: lastNames.map((f) => f.value),
-        nationality: {
-          name: "Türkiye",
-          alpha2Code: "TR",
-          alpha3Code: "TRY",
-          availableToPlay: true,
-          continent: "Europe",
-          prestige: 500,
-          languages: [],
-          currencies: [],
-        },
-      });
-      setPlayers(_players);
-    }
-    generate();
-  }, []);
-
   return (
-    <div
-    // forceAuth={true}
-    // pageTitle={club?.name || ""}
-    // title={club?.name || ""}
-    // subtitle="1st in Premier League"
-    // textColor={club?.colors.homeColors.main}
-    // backgroundColor={club?.colors.homeColors.secondary}
-    >
+    <div>
+      <Header
+        backgroundColor={club?.colors.homeColors.main}
+        textColor={club?.colors.homeColors.secondary}
+      >
+        <HeaderPrimaryLine title={club?.name} />
+      </Header>
+
       <ClubDetailTopBar club={club} />
 
       <Routes location={location}>
