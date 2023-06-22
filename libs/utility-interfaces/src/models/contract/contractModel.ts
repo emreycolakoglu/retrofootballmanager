@@ -1,14 +1,12 @@
 export namespace ContractModel {
-  interface Base {
+  export interface Base {
     id?: number;
-    yearlyWage: number;
+    weeklyWage: number;
     clubId: number;
     expiryDate: number;
   }
-  export interface PlayerContract extends Base {
-    playerId: number;
-  }
-  export interface StaffContract extends Base {
-    staffId: number;
+  export interface PlayerContractProposal {
+    weeklyWage: number;
+    durationInYears: number;
   }
 }

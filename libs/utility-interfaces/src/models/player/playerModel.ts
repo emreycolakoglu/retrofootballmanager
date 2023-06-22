@@ -9,10 +9,10 @@ export namespace PlayerModel {
     mental: MentalSkills;
     physical: PhysicalSkills;
     goalkeeping: GoalkeepingSkills;
-    position: Position;
-    contract?: string;
+    position: PlayerPosition;
+    contract?: number;
     club: number;
-    prestige: Prestige;
+    prestige: PlayerPrestige;
   }
 
   export interface GeneratorOutcome {
@@ -23,8 +23,8 @@ export namespace PlayerModel {
     mental: MentalSkills;
     physical: PhysicalSkills;
     goalkeeping: GoalkeepingSkills;
-    position: Position;
-    prestige: Prestige;
+    position: PlayerPosition;
+    prestige: PlayerPrestige;
   }
 
   export interface TechnicalSkills {
@@ -81,7 +81,7 @@ export namespace PlayerModel {
     strength: number;
   }
 
-  export interface Position {
+  export interface PlayerPosition {
     goalkeeper: number;
     defence: number;
     defensiveMid: number;
@@ -95,7 +95,7 @@ export namespace PlayerModel {
     };
   }
 
-  export interface Prestige {
+  export interface PlayerPrestige {
     local: number;
     global: number;
   }

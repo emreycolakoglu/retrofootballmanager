@@ -10,7 +10,10 @@ import {
   Button,
   HeaderSecondaryLine,
 } from "@rfm/ui-components";
-import { generateStarterFirstTeamSquad } from "@rfm/utility-factories";
+import {
+  generatePlayerContractProposal,
+  generateStarterFirstTeamSquad,
+} from "@rfm/utility-factories";
 import { useNavigate } from "react-router-dom";
 import { CountryModel } from "@rfm/utility-interfaces";
 
@@ -37,7 +40,10 @@ export default function CreateGameView() {
 
     const clubId = await db.clubs.add({
       name: request.clubName,
-      prestige: 3,
+      prestige: {
+        global: 100,
+        local: 300,
+      },
       colors: {
         homeColors: {
           main: request.homeMain,
@@ -83,13 +89,28 @@ export default function CreateGameView() {
       lastNames: lastNames.map((x) => x.value),
     });
 
-    await db.players.bulkAdd(
-      players.map((p) => ({
-        ...p,
+    for await (const player of players) {
+      const contractProposal = generatePlayerContractProposal({
+        clubPrestige: {
+          global: 100,
+          local: 300,
+        },
+        playerPrestige: player.prestige,
+      });
+
+      const contractId = await db.playerContracts.add({
+        clubId: clubId,
+        expiryDate: 1,
+        weeklyWage: contractProposal.weeklyWage,
+      });
+
+      await db.players.add({
+        ...player,
         nationality: request.country,
         club: clubId,
-      }))
-    );
+        contract: contractId,
+      });
+    }
 
     navigate(`/club/${clubId}`);
   };

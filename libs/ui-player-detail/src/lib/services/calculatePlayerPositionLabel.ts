@@ -1,7 +1,7 @@
 import { PlayerModel } from "@rfm/utility-interfaces";
 
 export function calculatePlayerPositionLabel(
-  position: PlayerModel.Position
+  position: PlayerModel.PlayerPosition
 ): string {
   const positions: string[] = [];
   const sides: string[] = [];

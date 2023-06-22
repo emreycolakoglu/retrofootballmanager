@@ -17,8 +17,8 @@ class RFMDatabase extends Dexie {
   players!: Dexie.Table<PlayerModel.Base, number>;
   staff!: Dexie.Table<StaffModel.Base, number>;
   clubs!: Dexie.Table<ClubModel.Base, number>;
-  playerContracts!: Dexie.Table<ContractModel.PlayerContract, number>;
-  staffContracts!: Dexie.Table<ContractModel.StaffContract, number>;
+  playerContracts!: Dexie.Table<ContractModel.Base, number>;
+  staffContracts!: Dexie.Table<ContractModel.Base, number>;
   continents!: Dexie.Table<ContinentModel.Base, string>;
   countries!: Dexie.Table<CountryModel.Base, string>;
   cities!: Dexie.Table<CityModel.Base, number>;

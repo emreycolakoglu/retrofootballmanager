@@ -2,7 +2,7 @@ export namespace ClubModel {
   export interface Base {
     id?: number;
     name: string;
-    prestige: number;
+    prestige: ClubPrestige;
     colors: {
       homeColors: {
         main: string;
@@ -13,5 +13,10 @@ export namespace ClubModel {
         secondary: string;
       };
     };
+  }
+
+  export interface ClubPrestige {
+    local: number;
+    global: number;
   }
 }
