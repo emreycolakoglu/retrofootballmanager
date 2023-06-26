@@ -5,6 +5,7 @@ import { ClubSquadView } from "./clubSquadView";
 import db from "@rfm/dexie-database";
 import { useLiveQuery } from "dexie-react-hooks";
 import { Header, HeaderPrimaryLine } from "@rfm/ui-components";
+import { ContractModel } from "@rfm/utility-interfaces";
 
 export const ClubDetailView = (): ReactElement => {
   const params = useParams<{ id: string }>();
@@ -12,10 +13,29 @@ export const ClubDetailView = (): ReactElement => {
     () => db.clubs.get(parseInt(params.id as string)),
     [params.id]
   );
-  const players = useLiveQuery(
-    () => db.players.filter((p) => p.club == club?.id).toArray(),
+  const contracts = useLiveQuery(
+    () =>
+      db.playerContracts
+        .filter(
+          (contract) =>
+            contract.clubId == club?.id &&
+            contract.contractSquad == ContractModel.ContractSquad.MAIN
+        )
+        .toArray(),
     [club?.id]
   );
+
+  const players = useLiveQuery(
+    () =>
+      db.players
+        .filter(
+          (player) =>
+            !!contracts?.find((contract) => contract.id == player.contract)
+        )
+        .toArray(),
+    [contracts]
+  );
+
   const location = useLocation();
 
   return (

@@ -12,7 +12,7 @@ export function generateStarterYouthTeamSquad(options: {
   nationality?: any;
   firstNames?: string[];
   lastNames?: string[];
-}): PlayerModel.Base[] {
+}): PlayerModel.GeneratorOutcome[] {
   const formula: IPlayerFormula[] = [
     {
       position: PlayerPosition.GOALKEEPER,
@@ -348,7 +348,7 @@ export function generateStarterYouthTeamSquad(options: {
     },
   ];
 
-  const players: PlayerModel.Base[] = [];
+  const players: PlayerModel.GeneratorOutcome[] = [];
 
   formula.map((f) => {
     players.push(generatePlayer(f));

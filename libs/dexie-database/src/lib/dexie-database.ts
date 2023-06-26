@@ -31,7 +31,7 @@ class RFMDatabase extends Dexie {
 
   constructor() {
     super("rfm");
-    this.version(7).stores({
+    this.version(8).stores({
       players: "++id",
       staff: "++id",
       clubs: "++id",

@@ -13,9 +13,10 @@ import {
 import {
   generatePlayerContractProposal,
   generateStarterFirstTeamSquad,
+  generateStarterYouthTeamSquad,
 } from "@rfm/utility-factories";
 import { useNavigate } from "react-router-dom";
-import { CountryModel } from "@rfm/utility-interfaces";
+import { ContractModel, CountryModel } from "@rfm/utility-interfaces";
 
 export default function CreateGameView() {
   const navigate = useNavigate();
@@ -92,7 +93,12 @@ export default function CreateGameView() {
       firstNames: firstNames.map((x) => x.value),
       lastNames: lastNames.map((x) => x.value),
     });
+    const youthPlayers = generateStarterYouthTeamSquad({
+      firstNames: firstNames.map((x) => x.value),
+      lastNames: lastNames.map((x) => x.value),
+    });
 
+    // save main squad
     for await (const player of players) {
       const contractProposal = generatePlayerContractProposal({
         clubPrestige: {
@@ -106,6 +112,34 @@ export default function CreateGameView() {
         clubId: clubId,
         expiryDate: 1,
         weeklyWage: contractProposal.weeklyWage,
+        contractType: ContractModel.ContractType.FULLTIME,
+        contractSquad: ContractModel.ContractSquad.MAIN,
+      });
+
+      await db.players.add({
+        ...player,
+        nationality: request.country,
+        club: clubId,
+        contract: contractId,
+      });
+    }
+
+    // save youth squad
+    for await (const player of youthPlayers) {
+      const contractProposal = generatePlayerContractProposal({
+        clubPrestige: {
+          global: 100,
+          local: 300,
+        },
+        playerPrestige: player.prestige,
+      });
+
+      const contractId = await db.playerContracts.add({
+        clubId: clubId,
+        expiryDate: 1,
+        weeklyWage: contractProposal.weeklyWage,
+        contractType: ContractModel.ContractType.YOUTH,
+        contractSquad: ContractModel.ContractSquad.YOUTH,
       });
 
       await db.players.add({
