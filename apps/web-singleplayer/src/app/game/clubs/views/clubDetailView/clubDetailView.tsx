@@ -1,19 +1,18 @@
 import { ReactElement, useEffect, useState } from "react";
 import { Route, Routes, useLocation, useParams } from "react-router-dom";
-import ClubDetailTopBar from "../components/clubDetailTopBar/clubDetailTopBar";
-import { ClubSquadView } from "./clubSquadView";
 import db from "@rfm/dexie-database";
 import { useLiveQuery } from "dexie-react-hooks";
 import { Header, HeaderPrimaryLine } from "@rfm/ui-components";
 import { ContractModel } from "@rfm/utility-interfaces";
+import { ClubSquadView, ClubDetailTopBar } from "@rfm/ui-club-detail";
 
-export const ClubDetailView = (): ReactElement => {
+const ClubDetailView = (): ReactElement => {
   const params = useParams<{ id: string }>();
   const club = useLiveQuery(
     () => db.clubs.get(parseInt(params.id as string)),
     [params.id]
   );
-  const contracts = useLiveQuery(
+  const firstTeamContracts = useLiveQuery(
     () =>
       db.playerContracts
         .filter(
@@ -24,16 +23,65 @@ export const ClubDetailView = (): ReactElement => {
         .toArray(),
     [club?.id]
   );
-
-  const players = useLiveQuery(
+  const firstTeamPlayers = useLiveQuery(
     () =>
       db.players
         .filter(
           (player) =>
-            !!contracts?.find((contract) => contract.id == player.contract)
+            !!firstTeamContracts?.find(
+              (contract) => contract.id == player.contract
+            )
         )
         .toArray(),
-    [contracts]
+    [firstTeamContracts]
+  );
+
+  const reserveTeamContracts = useLiveQuery(
+    () =>
+      db.playerContracts
+        .filter(
+          (contract) =>
+            contract.clubId == club?.id &&
+            contract.contractSquad == ContractModel.ContractSquad.RESERVES
+        )
+        .toArray(),
+    [club?.id]
+  );
+  const reserveTeamPlayers = useLiveQuery(
+    () =>
+      db.players
+        .filter(
+          (player) =>
+            !!reserveTeamContracts?.find(
+              (contract) => contract.id == player.contract
+            )
+        )
+        .toArray(),
+    [reserveTeamContracts]
+  );
+
+  const youthTeamContracts = useLiveQuery(
+    () =>
+      db.playerContracts
+        .filter(
+          (contract) =>
+            contract.clubId == club?.id &&
+            contract.contractSquad == ContractModel.ContractSquad.YOUTH
+        )
+        .toArray(),
+    [club?.id]
+  );
+  const youthTeamPlayers = useLiveQuery(
+    () =>
+      db.players
+        .filter(
+          (player) =>
+            !!youthTeamContracts?.find(
+              (contract) => contract.id == player.contract
+            )
+        )
+        .toArray(),
+    [youthTeamContracts]
   );
 
   const location = useLocation();
@@ -52,7 +100,15 @@ export const ClubDetailView = (): ReactElement => {
       <Routes location={location}>
         <Route
           path="/"
-          element={<ClubSquadView club={club} players={players} />}
+          element={<ClubSquadView club={club} players={firstTeamPlayers} />}
+        />
+        <Route
+          path="/reserves"
+          element={<ClubSquadView club={club} players={reserveTeamPlayers} />}
+        />
+        <Route
+          path="/youth"
+          element={<ClubSquadView club={club} players={youthTeamPlayers} />}
         />
         {/* <Route
           path="/club/:id/staff"
@@ -83,3 +139,5 @@ export const ClubDetailView = (): ReactElement => {
     </div>
   );
 };
+
+export default ClubDetailView;

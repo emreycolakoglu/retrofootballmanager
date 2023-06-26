@@ -1,4 +1,5 @@
 import styles from "./prev-next-buttons.module.scss";
+import { TbTriangleInvertedFilled } from "react-icons/tb";
 
 /* eslint-disable-next-line */
 export interface PrevNextButtonsProps {
@@ -10,10 +11,10 @@ export function PrevNextButtons(props: PrevNextButtonsProps) {
   return (
     <div className={styles["prevNextWrapper"]}>
       <button className="transparent sm" onClick={props.onPrev}>
-        {"<"}
+        <TbTriangleInvertedFilled />
       </button>
       <button className="transparent sm" onClick={props.onNext}>
-        {">"}
+        <TbTriangleInvertedFilled />
       </button>
     </div>
   );

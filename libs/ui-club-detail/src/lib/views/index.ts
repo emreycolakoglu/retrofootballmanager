@@ -1,1 +1,1 @@
-export * from "./clubDetailView";
+export * from "./clubSquadView";

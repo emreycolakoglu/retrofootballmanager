@@ -9,8 +9,8 @@
 .active {
   @include buttonBase();
   @include buttonBlue();
-  min-height: 30px;
-  height: 30px;
+  min-height: 20px;
+  height: 27px;
   text-decoration: none;
   line-height: 27px;
 }

@@ -13,7 +13,6 @@ import {
   SidebarShell,
   useFullscreen,
 } from "@rfm/ui-components";
-import { ClubDetailView } from "@rfm/ui-club-detail";
 
 const LandingView = lazy(
   () => import("./game/landing/views/landingView/landingView")
@@ -23,6 +22,9 @@ const CreateGameView = lazy(
 );
 const PlayerDetailView = lazy(
   () => import("./game/players/views/playerDetailView/playerDetailView")
+);
+const ClubDetailView = lazy(
+  () => import("./game/clubs/views/clubDetailView/clubDetailView")
 );
 
 export function App() {

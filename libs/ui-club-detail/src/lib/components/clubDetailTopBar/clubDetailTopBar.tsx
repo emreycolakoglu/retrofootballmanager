@@ -3,10 +3,9 @@ import styles from "./clubDetailTopBar.module.scss";
 import { NavLink } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { ButtonGroup } from "@rfm/ui-components";
-import classNames from "classnames";
 import { ClubModel } from "@rfm/utility-interfaces";
 
-const ClubDetailTopBar = (props: Props): ReactElement => {
+export const ClubDetailTopBar = (props: Props): ReactElement => {
   const { t } = useTranslation("cm");
 
   return (
@@ -76,5 +75,3 @@ const ClubDetailTopBar = (props: Props): ReactElement => {
 interface Props {
   club?: ClubModel.Base;
 }
-
-export default ClubDetailTopBar;

@@ -1,0 +1,23 @@
+@import "../../../../../../libs/ui-components/src/ui-mixins/buttons";
+
+.bar {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.button {
+  @include buttonBase();
+  @include buttonBlue();
+  @include buttonRounded();
+  @include buttonSmall();
+  display: block;
+  text-decoration: none;
+
+  min-height: 20px;
+  height: 27px;
+  text-decoration: none;
+  line-height: 27px;
+  border-radius: 10px;
+}
