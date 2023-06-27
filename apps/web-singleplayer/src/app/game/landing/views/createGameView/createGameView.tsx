@@ -98,6 +98,7 @@ export default function CreateGameView() {
       lastNames: lastNames.map((x) => x.value),
     });
 
+    let jerseyNumber = 1;
     // save main squad
     for await (const player of players) {
       const contractProposal = generatePlayerContractProposal({
@@ -114,6 +115,7 @@ export default function CreateGameView() {
         weeklyWage: contractProposal.weeklyWage,
         contractType: ContractModel.ContractType.FULLTIME,
         contractSquad: ContractModel.ContractSquad.MAIN,
+        squadNumber: jerseyNumber++,
       });
 
       await db.players.add({
@@ -140,6 +142,7 @@ export default function CreateGameView() {
         weeklyWage: contractProposal.weeklyWage,
         contractType: ContractModel.ContractType.YOUTH,
         contractSquad: ContractModel.ContractSquad.YOUTH,
+        squadNumber: jerseyNumber++,
       });
 
       await db.players.add({

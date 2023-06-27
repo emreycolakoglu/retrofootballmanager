@@ -17,6 +17,10 @@ export default function PlayerDetailView() {
     [params.id]
   );
   const club = useLiveQuery(() => db.clubs.get(player?.club || 0), [player]);
+  const contract = useLiveQuery(
+    () => db.playerContracts.get(player?.contract || 0),
+    [player]
+  );
 
   return (
     <>
@@ -25,7 +29,7 @@ export default function PlayerDetailView() {
         textColor={club?.colors.homeColors.secondary}
       >
         <HeaderPrimaryLine
-          title={`${player?.firstName} ${player?.lastName} (${club?.name})`}
+          title={`${contract?.squadNumber}. ${player?.firstName} ${player?.lastName} (${club?.name})`}
         />
         <HeaderSecondaryLine
           subtitle={`${calculatePlayerPositionName(player?.position)}, ${

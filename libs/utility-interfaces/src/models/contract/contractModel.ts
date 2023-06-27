@@ -12,6 +12,7 @@ export namespace ContractModel {
     minFeeRelease?: number;
     relegationRelease?: number;
     nonPromotionRelease?: number;
+    squadNumber: number;
   }
   export interface PlayerContractProposal {
     weeklyWage: number;

@@ -1,0 +1,35 @@
+@import "./_variables.scss";
+@import "./_mixins.scss";
+
+@mixin dropdownBase() {
+  appearance: none;
+  background-color: #4b638b;
+  width: 100%;
+  padding: 0px 15px;
+  height: 26px;
+  border-radius: 6px;
+  border: none;
+  user-select: none;
+  font-size: 11px;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: inherit;
+
+  @include selectGradient($blueButtonStart, $blueButtonEnd);
+  @include buttonShadow($blueButtonStart, $blueButtonEnd);
+
+  &:hover {
+    @include selectGradient(
+      lighten($blueButtonStart, $buttonHoverLightenRatio),
+      lighten($blueButtonEnd, $buttonHoverLightenRatio)
+    );
+  }
+
+  &:active {
+    @include buttonActiveShadow($blueButtonEnd, $blueButtonStart);
+  }
+
+  &:focus {
+    outline: none;
+  }
+}

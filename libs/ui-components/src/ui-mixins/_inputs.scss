@@ -1,0 +1,24 @@
+@import "./_variables.scss";
+
+@mixin inputBase() {
+  width: 55%;
+  background-color: rgba($white, 0.1);
+  padding: 0px 3px;
+  line-height: 17px;
+  height: 24px;
+  color: #ffffff;
+  font-family: inherit;
+
+  &:focus {
+    outline: none;
+  }
+
+  &:-webkit-autofill,
+  &:-webkit-autofill:hover,
+  &:-webkit-autofill:focus {
+    border: 1px solid inherit;
+    -webkit-text-fill-color: $primaryText;
+    -webkit-box-shadow: 0 0 0px 1000px rgba($white, 0.1) inset;
+    transition: background-color 5000s ease-in-out 0s;
+  }
+}

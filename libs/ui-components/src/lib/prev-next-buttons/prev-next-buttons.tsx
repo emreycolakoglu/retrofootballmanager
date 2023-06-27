@@ -11,10 +11,10 @@ export function PrevNextButtons(props: PrevNextButtonsProps) {
   return (
     <div className={styles["prevNextWrapper"]}>
       <button className="transparent sm" onClick={props.onPrev}>
-        <TbTriangleInvertedFilled />
+        <TbTriangleInvertedFilled style={{ transform: "rotate(90deg)" }} />
       </button>
       <button className="transparent sm" onClick={props.onNext}>
-        <TbTriangleInvertedFilled />
+        <TbTriangleInvertedFilled style={{ transform: "rotate(-90deg)" }} />
       </button>
     </div>
   );
