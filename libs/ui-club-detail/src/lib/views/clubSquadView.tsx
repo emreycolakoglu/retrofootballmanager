@@ -12,12 +12,14 @@ export const ClubSquadView = (props: Props): ReactElement => {
     <div className="row">
       <div className="col-12">
         <SquadDetailToolbar
-          onMainSquadClicked={() => navigation(`/club/${props.club?.id}`)}
+          onMainSquadClicked={() =>
+            navigation(`/club/${props.club?.id}/squad/main`)
+          }
           onReserveSquadClicked={() =>
-            navigation(`/club/${props.club?.id}/reserves`)
+            navigation(`/club/${props.club?.id}/squad/reserves`)
           }
           onYouthSquadClicked={() =>
-            navigation(`/club/${props.club?.id}/youth`)
+            navigation(`/club/${props.club?.id}/squad/youth`)
           }
         />
       </div>

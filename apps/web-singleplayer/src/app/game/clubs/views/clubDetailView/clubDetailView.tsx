@@ -65,15 +65,19 @@ const ClubDetailView = (): ReactElement => {
 
       <Routes location={location}>
         <Route
-          path="/"
+          path="/squad"
           element={<ClubSquadView club={club} players={firstTeamPlayers} />}
         />
         <Route
-          path="/reserves"
+          path="/squad/main"
+          element={<ClubSquadView club={club} players={firstTeamPlayers} />}
+        />
+        <Route
+          path="/squad/reserves"
           element={<ClubSquadView club={club} players={reserveTeamPlayers} />}
         />
         <Route
-          path="/youth"
+          path="/squad/youth"
           element={<ClubSquadView club={club} players={youthTeamPlayers} />}
         />
         {/* <Route

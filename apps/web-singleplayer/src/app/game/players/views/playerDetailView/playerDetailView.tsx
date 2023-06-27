@@ -1,14 +1,9 @@
-import {
-  Header,
-  HeaderPrimaryLine,
-  HeaderSecondaryLine,
-} from "@rfm/ui-components";
 import { PlayerDetailTopBar } from "../../components/playerDetailTopBar/playerDetailTopBar";
 import { Route, Routes, useParams } from "react-router-dom";
 import { PlayerAttributesRow } from "../../components/playerAttributesRow/playerAttributesRow";
 import db from "@rfm/dexie-database";
 import { useLiveQuery } from "dexie-react-hooks";
-import { calculatePlayerPositionName } from "@rfm/ui-player-detail";
+import { PlayerHeader } from "../../components";
 
 export default function PlayerDetailView() {
   const params = useParams<{ id: string }>();
@@ -23,21 +18,7 @@ export default function PlayerDetailView() {
 
   return (
     <>
-      <Header
-        backgroundColor={club?.colors.homeColors.main}
-        textColor={club?.colors.homeColors.secondary}
-      >
-        <HeaderPrimaryLine
-          title={`${playerRecord?.contract?.squadNumber}. ${playerRecord?.player.firstName} ${playerRecord?.player.lastName} (${club?.name})`}
-        />
-        <HeaderSecondaryLine
-          subtitle={`${calculatePlayerPositionName(
-            playerRecord?.player.position
-          )}, ${playerRecord?.player.nationality}, Age: ${
-            playerRecord?.player.age
-          }`}
-        />
-      </Header>
+      <PlayerHeader playerRecord={playerRecord} club={club} />
 
       <PlayerDetailTopBar player={playerRecord} />
 

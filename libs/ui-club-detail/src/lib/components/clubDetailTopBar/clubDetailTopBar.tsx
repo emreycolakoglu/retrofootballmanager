@@ -13,11 +13,10 @@ export const ClubDetailTopBar = (props: Props): ReactElement => {
       <div className="col-12">
         <ButtonGroup>
           <NavLink
-            to={`/club/${props.club?.id}`}
+            to={`/club/${props.club?.id}/squad`}
             className={({ isActive }) =>
               isActive ? styles.active : styles.button
             }
-            end
           >
             {t("Squad")}
           </NavLink>
@@ -26,7 +25,6 @@ export const ClubDetailTopBar = (props: Props): ReactElement => {
             className={({ isActive }) =>
               isActive ? styles.active : styles.button
             }
-            end
           >
             {t("Staff")}
           </NavLink>

@@ -2,7 +2,7 @@ import styles from "./header-primary-line.module.scss";
 
 /* eslint-disable-next-line */
 export interface HeaderPrimaryLineProps {
-  title?: string;
+  title?: string | JSX.Element;
 }
 
 export function HeaderPrimaryLine(props: HeaderPrimaryLineProps) {
