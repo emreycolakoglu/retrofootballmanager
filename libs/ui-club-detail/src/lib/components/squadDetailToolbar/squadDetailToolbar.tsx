@@ -12,6 +12,20 @@ export const SquadDetailToolbar = (props: Props): ReactElement => {
             View <TbTriangleInvertedFilled size={8} />
           </button>
         }
+        menuItems={[
+          {
+            label: "Main",
+            onClick: props.onMainSquadClicked,
+          },
+          {
+            label: "Reserves",
+            onClick: props.onReserveSquadClicked,
+          },
+          {
+            label: "Youth",
+            onClick: props.onYouthSquadClicked,
+          },
+        ]}
       />
 
       <Dropdown
@@ -33,4 +47,8 @@ export const SquadDetailToolbar = (props: Props): ReactElement => {
   );
 };
 
-interface Props {}
+interface Props {
+  onMainSquadClicked: () => void;
+  onReserveSquadClicked: () => void;
+  onYouthSquadClicked: () => void;
+}

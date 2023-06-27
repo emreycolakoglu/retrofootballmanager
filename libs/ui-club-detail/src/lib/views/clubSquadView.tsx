@@ -3,12 +3,23 @@ import { ClubModel, PlayerModel } from "@rfm/utility-interfaces";
 import React, { ReactElement } from "react";
 import { SinglePlayerInSquadList } from "../components";
 import { SquadDetailToolbar } from "../components/squadDetailToolbar/squadDetailToolbar";
+import { useNavigate, useNavigation } from "react-router-dom";
 
 export const ClubSquadView = (props: Props): ReactElement => {
+  const navigation = useNavigate();
+
   return (
     <div className="row">
       <div className="col-12">
-        <SquadDetailToolbar />
+        <SquadDetailToolbar
+          onMainSquadClicked={() => navigation(`/club/${props.club?.id}`)}
+          onReserveSquadClicked={() =>
+            navigation(`/club/${props.club?.id}/reserves`)
+          }
+          onYouthSquadClicked={() =>
+            navigation(`/club/${props.club?.id}/youth`)
+          }
+        />
       </div>
       <div className="col-12">
         <PanelWithTitle title="Players">
@@ -16,7 +27,7 @@ export const ClubSquadView = (props: Props): ReactElement => {
             {props.players
               ?.filter((p) => !!p)
               ?.map((player, i) => (
-                <SinglePlayerInSquadList player={{ ...player }} key={i} />
+                <SinglePlayerInSquadList player={player} key={i} />
               ))}
           </div>
         </PanelWithTitle>

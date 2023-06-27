@@ -12,76 +12,42 @@ const ClubDetailView = (): ReactElement => {
     () => db.clubs.get(parseInt(params.id as string)),
     [params.id]
   );
-  const firstTeamContracts = useLiveQuery(
-    () =>
-      db.playerContracts
-        .filter(
-          (contract) =>
-            contract.clubId == club?.id &&
-            contract.contractSquad == ContractModel.ContractSquad.MAIN
-        )
-        .toArray(),
-    [club?.id]
-  );
+
   const firstTeamPlayers = useLiveQuery(
     () =>
       db.players
         .filter(
-          (player) =>
-            !!firstTeamContracts?.find(
-              (contract) => contract.id == player.contract
-            )
-        )
-        .toArray(),
-    [firstTeamContracts]
-  );
-
-  const reserveTeamContracts = useLiveQuery(
-    () =>
-      db.playerContracts
-        .filter(
-          (contract) =>
-            contract.clubId == club?.id &&
-            contract.contractSquad == ContractModel.ContractSquad.RESERVES
+          (record) =>
+            record.contract.clubId == club?.id &&
+            record.contract.contractSquad == ContractModel.ContractSquad.MAIN
         )
         .toArray(),
     [club?.id]
   );
+
   const reserveTeamPlayers = useLiveQuery(
     () =>
       db.players
         .filter(
-          (player) =>
-            !!reserveTeamContracts?.find(
-              (contract) => contract.id == player.contract
-            )
-        )
-        .toArray(),
-    [reserveTeamContracts]
-  );
-
-  const youthTeamContracts = useLiveQuery(
-    () =>
-      db.playerContracts
-        .filter(
-          (contract) =>
-            contract.clubId == club?.id &&
-            contract.contractSquad == ContractModel.ContractSquad.YOUTH
+          (record) =>
+            record.contract.clubId == club?.id &&
+            record.contract.contractSquad ==
+              ContractModel.ContractSquad.RESERVES
         )
         .toArray(),
     [club?.id]
   );
+
   const youthTeamPlayers = useLiveQuery(
     () =>
       db.players
         .filter(
-          (player) =>
-            !!youthTeamContracts?.find(
-              (contract) => contract.id == player.contract
-            )
+          (record) =>
+            record.contract.clubId == club?.id &&
+            record.contract.contractSquad == ContractModel.ContractSquad.YOUTH
         )
         .toArray(),
-    [youthTeamContracts]
+    [club?.id]
   );
 
   const location = useLocation();

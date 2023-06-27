@@ -41,5 +41,5 @@ export function PlayerAttributesRow(props: Props) {
 }
 
 interface Props {
-  player?: PlayerModel.Base;
+  player?: PlayerModel.Player;
 }

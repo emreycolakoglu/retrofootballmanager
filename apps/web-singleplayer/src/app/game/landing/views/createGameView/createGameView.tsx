@@ -109,20 +109,19 @@ export default function CreateGameView() {
         playerPrestige: player.prestige,
       });
 
-      const contractId = await db.playerContracts.add({
-        clubId: clubId,
-        expiryDate: 1,
-        weeklyWage: contractProposal.weeklyWage,
-        contractType: ContractModel.ContractType.FULLTIME,
-        contractSquad: ContractModel.ContractSquad.MAIN,
-        squadNumber: jerseyNumber++,
-      });
-
       await db.players.add({
-        ...player,
-        nationality: request.country,
-        club: clubId,
-        contract: contractId,
+        player: {
+          ...player,
+          nationality: request.country,
+        },
+        contract: {
+          clubId: clubId,
+          expiryDate: 1,
+          weeklyWage: contractProposal.weeklyWage,
+          contractType: ContractModel.ContractType.FULLTIME,
+          contractSquad: ContractModel.ContractSquad.MAIN,
+          squadNumber: jerseyNumber++,
+        },
       });
     }
 
@@ -136,20 +135,19 @@ export default function CreateGameView() {
         playerPrestige: player.prestige,
       });
 
-      const contractId = await db.playerContracts.add({
-        clubId: clubId,
-        expiryDate: 1,
-        weeklyWage: contractProposal.weeklyWage,
-        contractType: ContractModel.ContractType.YOUTH,
-        contractSquad: ContractModel.ContractSquad.YOUTH,
-        squadNumber: jerseyNumber++,
-      });
-
       await db.players.add({
-        ...player,
-        nationality: request.country,
-        club: clubId,
-        contract: contractId,
+        player: {
+          ...player,
+          nationality: request.country,
+        },
+        contract: {
+          clubId: clubId,
+          expiryDate: 1,
+          weeklyWage: contractProposal.weeklyWage,
+          contractType: ContractModel.ContractType.YOUTH,
+          contractSquad: ContractModel.ContractSquad.YOUTH,
+          squadNumber: jerseyNumber++,
+        },
       });
     }
 

@@ -12,14 +12,13 @@ import { calculatePlayerPositionName } from "@rfm/ui-player-detail";
 
 export default function PlayerDetailView() {
   const params = useParams<{ id: string }>();
-  const player = useLiveQuery(
+  const playerRecord = useLiveQuery(
     () => db.players.get(parseInt(params.id as string)),
     [params.id]
   );
-  const club = useLiveQuery(() => db.clubs.get(player?.club || 0), [player]);
-  const contract = useLiveQuery(
-    () => db.playerContracts.get(player?.contract || 0),
-    [player]
+  const club = useLiveQuery(
+    () => db.clubs.get(playerRecord?.contract.clubId || 0),
+    [playerRecord]
   );
 
   return (
@@ -29,19 +28,24 @@ export default function PlayerDetailView() {
         textColor={club?.colors.homeColors.secondary}
       >
         <HeaderPrimaryLine
-          title={`${contract?.squadNumber}. ${player?.firstName} ${player?.lastName} (${club?.name})`}
+          title={`${playerRecord?.contract?.squadNumber}. ${playerRecord?.player.firstName} ${playerRecord?.player.lastName} (${club?.name})`}
         />
         <HeaderSecondaryLine
-          subtitle={`${calculatePlayerPositionName(player?.position)}, ${
-            player?.nationality
-          }, Age: ${player?.age}`}
+          subtitle={`${calculatePlayerPositionName(
+            playerRecord?.player.position
+          )}, ${playerRecord?.player.nationality}, Age: ${
+            playerRecord?.player.age
+          }`}
         />
       </Header>
 
-      <PlayerDetailTopBar player={player} />
+      <PlayerDetailTopBar player={playerRecord} />
 
       <Routes>
-        <Route path="/" element={<PlayerAttributesRow player={player} />} />
+        <Route
+          path="/"
+          element={<PlayerAttributesRow player={playerRecord?.player} />}
+        />
       </Routes>
     </>
   );

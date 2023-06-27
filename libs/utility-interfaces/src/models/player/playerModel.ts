@@ -1,6 +1,13 @@
+import { ContractModel } from "../contract";
+
 export namespace PlayerModel {
   export interface Base {
     id?: number;
+    player: Player;
+    contract: ContractModel.Base;
+  }
+
+  export interface Player {
     firstName: string;
     lastName: string;
     nationality: string;
@@ -10,8 +17,6 @@ export namespace PlayerModel {
     physical: PhysicalSkills;
     goalkeeping: GoalkeepingSkills;
     position: PlayerPosition;
-    contract?: number;
-    club: number;
     prestige: PlayerPrestige;
   }
 

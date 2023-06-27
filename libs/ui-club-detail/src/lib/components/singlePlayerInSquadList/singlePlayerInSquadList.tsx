@@ -20,10 +20,10 @@ export const SinglePlayerInSquadList = (props: Props): ReactElement => {
         className={styles["player-detail-link"]}
       >
         <div className={styles["player-name"]}>
-          {calculatePlayerNameLabel(props.player)}
+          {calculatePlayerNameLabel(props.player.player)}
         </div>
         <div className={styles["player-position"]}>
-          {calculatePlayerPositionLabel(props.player.position)}
+          {calculatePlayerPositionLabel(props.player.player.position)}
         </div>
       </Link>
     </div>
