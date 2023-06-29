@@ -23,9 +23,7 @@ const CreateGameView = lazy(
 const PlayerDetailView = lazy(
   () => import("./game/players/views/playerDetailView/playerDetailView")
 );
-const ClubDetailView = lazy(
-  () => import("./game/clubs/views/clubDetailView/clubDetailView")
-);
+const ClubView = lazy(() => import("./game/clubs/views/clubView/clubView"));
 
 export function App() {
   const location = useLocation();
@@ -62,7 +60,7 @@ export function App() {
               <Route path="/" element={<LandingView />} />
               <Route path="/new" element={<CreateGameView />} />
               <Route path="/player/:id/*" element={<PlayerDetailView />} />
-              <Route path="/club/:id/*" element={<ClubDetailView />} />
+              <Route path="/club/:id/*" element={<ClubView />} />
             </Routes>
           </Suspense>
         </Layout>

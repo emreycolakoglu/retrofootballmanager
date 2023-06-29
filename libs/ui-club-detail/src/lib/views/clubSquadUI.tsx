@@ -5,7 +5,7 @@ import { SinglePlayerInSquadList } from "../components";
 import { SquadDetailToolbar } from "../components/squadDetailToolbar/squadDetailToolbar";
 import { useNavigate, useNavigation } from "react-router-dom";
 
-export const ClubSquadView = (props: Props): ReactElement => {
+export const ClubSquadUI = (props: Props): ReactElement => {
   const navigation = useNavigate();
 
   return (

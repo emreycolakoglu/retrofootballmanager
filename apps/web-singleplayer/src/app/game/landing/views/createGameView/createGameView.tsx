@@ -151,6 +151,11 @@ export default function CreateGameView() {
       });
     }
 
+    await db.news.add({
+      title: `${request.clubName} has appointed ${request.firstName} ${request.lastName} as manager.`,
+      message: "",
+    });
+
     navigate(`/club/${clubId}`);
   };
 

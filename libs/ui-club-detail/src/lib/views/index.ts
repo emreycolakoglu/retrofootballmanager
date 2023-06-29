@@ -1,1 +1,1 @@
-export * from "./clubSquadView";
+export * from "./clubSquadUI";
