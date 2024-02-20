@@ -54,18 +54,15 @@
     },
     "test": {
       "executor": "@nx/vite:test",
-      "outputs": ["coverage/apps/web-singleplayer"],
+      "outputs": ["{workspaceRoot}/coverage/apps/web-singleplayer"],
       "options": {
         "passWithNoTests": true,
         "reportsDirectory": "../../coverage/apps/web-singleplayer"
       }
     },
     "lint": {
-      "executor": "@nx/linter:eslint",
-      "outputs": ["{options.outputFile}"],
-      "options": {
-        "lintFilePatterns": ["apps/web-singleplayer/**/*.{ts,tsx,js,jsx}"]
-      }
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"]
     },
     "stats": {
       "executor": "nx:run-commands",
