@@ -1,12 +1,11 @@
 {
-  "name": "static",
+  "name": "feature-database",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "libs/static/src",
+  "sourceRoot": "domains/feature-database/src",
   "projectType": "library",
   "targets": {
     "lint": {
-      "executor": "@nx/eslint:lint",
-      "outputs": ["{options.outputFile}"]
+      "executor": "@nx/eslint:lint"
     }
   },
   "tags": []

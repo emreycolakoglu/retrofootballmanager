@@ -1,5 +1,7 @@
+import packageData from "../../package.json";
+
 const obj = {
-  version: "0.0.1",
+  version: packageData.version,
 };
 
 export default obj;
