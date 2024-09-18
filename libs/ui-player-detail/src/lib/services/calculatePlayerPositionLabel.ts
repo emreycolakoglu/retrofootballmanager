@@ -1,14 +1,14 @@
 import { PlayerModel } from "@rfm/utility-interfaces";
 
 export function calculatePlayerPositionLabel(
-  position: PlayerModel.PlayerPosition
+  position: PlayerModel.PlayerPosition,
 ): string {
   const positions: string[] = [];
   const sides: string[] = [];
 
   if (position.goalkeeper > 15) {
     positions.push("GK");
-    return `${positions.join("/")} ${sides.join("")}`;
+    return `${positions.join("/")}${sides.join("")}`;
   }
   if (position.defence > 15) {
     positions.push("D");
