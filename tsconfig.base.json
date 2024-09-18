@@ -15,8 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@domains/feature-database": ["domains/feature-database/src/index.ts"],
-      "@rfm/dexie-database": ["libs/dexie-database/src/index.ts"],
+      "@rfm/feature-database": ["domains/feature-database/src/index.ts"],
       "@rfm/static": ["libs/static/src/index.ts"],
       "@rfm/ui-club-detail": ["libs/ui-club-detail/src/index.ts"],
       "@rfm/ui-components": ["libs/ui-components/src/index.ts"],

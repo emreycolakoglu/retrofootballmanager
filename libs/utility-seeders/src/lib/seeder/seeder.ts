@@ -1,4 +1,4 @@
-import db from "@rfm/dexie-database";
+import db from "@rfm/feature-database";
 import { seedColors } from "../colors";
 import { seedContinents } from "../continent";
 import { seedCountries } from "../countries";

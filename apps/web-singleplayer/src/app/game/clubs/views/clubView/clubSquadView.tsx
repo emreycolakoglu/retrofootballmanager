@@ -1,4 +1,4 @@
-import db from "@rfm/dexie-database";
+import db from "@rfm/feature-database";
 import { ClubSquadUI } from "@rfm/ui-club-detail";
 import { ContractModel } from "@rfm/utility-interfaces";
 import { useLiveQuery } from "dexie-react-hooks";
@@ -10,7 +10,7 @@ export const ClubSquadView = (): ReactElement => {
   const params = useParams<{ id: string }>();
   const club = useLiveQuery(
     () => db.clubs.get(parseInt(params.id as string)),
-    [params.id]
+    [params.id],
   );
 
   const firstTeamPlayers = useLiveQuery(
@@ -19,10 +19,10 @@ export const ClubSquadView = (): ReactElement => {
         .filter(
           (record) =>
             record.contract.clubId == club?.id &&
-            record.contract.contractSquad == ContractModel.ContractSquad.MAIN
+            record.contract.contractSquad == ContractModel.ContractSquad.MAIN,
         )
         .toArray(),
-    [club?.id]
+    [club?.id],
   );
 
   const reserveTeamPlayers = useLiveQuery(
@@ -32,10 +32,10 @@ export const ClubSquadView = (): ReactElement => {
           (record) =>
             record.contract.clubId == club?.id &&
             record.contract.contractSquad ==
-              ContractModel.ContractSquad.RESERVES
+              ContractModel.ContractSquad.RESERVES,
         )
         .toArray(),
-    [club?.id]
+    [club?.id],
   );
 
   const youthTeamPlayers = useLiveQuery(
@@ -44,10 +44,10 @@ export const ClubSquadView = (): ReactElement => {
         .filter(
           (record) =>
             record.contract.clubId == club?.id &&
-            record.contract.contractSquad == ContractModel.ContractSquad.YOUTH
+            record.contract.contractSquad == ContractModel.ContractSquad.YOUTH,
         )
         .toArray(),
-    [club?.id]
+    [club?.id],
   );
 
   return (

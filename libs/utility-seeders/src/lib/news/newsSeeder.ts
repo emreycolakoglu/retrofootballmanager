@@ -1,4 +1,4 @@
-import db from "@rfm/dexie-database";
+import db from "@rfm/feature-database";
 
 export async function seedNews() {
   await db.news.put({

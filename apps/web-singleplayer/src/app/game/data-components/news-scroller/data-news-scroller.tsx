@@ -1,4 +1,4 @@
-import db from "@rfm/dexie-database";
+import db from "@rfm/feature-database";
 import { useLiveQuery } from "dexie-react-hooks";
 import { useNavigate } from "react-router-dom";
 import { NewsScroller } from "@rfm/ui-components";

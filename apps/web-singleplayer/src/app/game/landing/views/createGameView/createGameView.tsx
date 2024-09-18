@@ -1,4 +1,4 @@
-import db from "@rfm/dexie-database";
+import db from "@rfm/feature-database";
 import { useLiveQuery } from "dexie-react-hooks";
 import { useState } from "react";
 import {
@@ -33,7 +33,7 @@ export default function CreateGameView() {
   const colors = useLiveQuery(() => db.colors.toArray(), []);
   const countries = useLiveQuery(
     () => db.countries.filter((x) => x.availableToPlay).toArray(),
-    []
+    [],
   );
 
   const handleFormSubmit = async (e: any) => {

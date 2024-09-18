@@ -1,9 +1,9 @@
 import { CountryModel } from "@rfm/utility-interfaces";
-import db from "@rfm/dexie-database";
+import db from "@rfm/feature-database";
 
 export async function seedCountries(): Promise<void> {
   const countries: any[] = await fetch(
-    "https://raw.githubusercontent.com/emreycolakoglu/retrofootballmanager/main/libs/static/src/lib/countries/countries.json"
+    "https://raw.githubusercontent.com/emreycolakoglu/retrofootballmanager/main/libs/static/src/lib/countries/countries.json",
   ).then((response) => response.json());
 
   const continents = await db.continents.toArray();

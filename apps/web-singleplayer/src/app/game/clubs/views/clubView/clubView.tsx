@@ -1,6 +1,6 @@
 import { ReactElement, useEffect, useState } from "react";
 import { Route, Routes, useLocation, useParams } from "react-router-dom";
-import db from "@rfm/dexie-database";
+import db from "@rfm/feature-database";
 import { useLiveQuery } from "dexie-react-hooks";
 import { Header, HeaderPrimaryLine } from "@rfm/ui-components";
 import { ContractModel } from "@rfm/utility-interfaces";
@@ -11,7 +11,7 @@ const ClubDetailView = (): ReactElement => {
   const params = useParams<{ id: string }>();
   const club = useLiveQuery(
     () => db.clubs.get(parseInt(params.id as string)),
-    [params.id]
+    [params.id],
   );
 
   const location = useLocation();

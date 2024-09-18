@@ -1,1 +1,3 @@
-export * from "./lib/feature-database";
+import db from "./lib/feature-database";
+
+export default db;
