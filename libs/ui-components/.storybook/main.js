@@ -1,6 +1,6 @@
 const config = {
   stories: ["../src/lib/**/*.stories.@(js|jsx|ts|tsx|mdx)"],
-  addons: ["@storybook/addon-essentials", "@chromatic-com/storybook"],
+  addons: ["@storybook/addon-essentials"],
 
   framework: {
     name: "@storybook/react-vite",
@@ -8,10 +8,6 @@ const config = {
   },
 
   docs: {},
-
-  typescript: {
-    reactDocgen: "react-docgen-typescript"
-  }
 };
 
 export default config;

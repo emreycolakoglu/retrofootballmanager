@@ -47,7 +47,7 @@
     "@nx/workspace": "19.7.4",
     "@storybook/addon-essentials": "8.3.1",
     "@storybook/core-server": "8.3.1",
-    "@storybook/react-vite": "7.6.17",
+    "@storybook/react-vite": "8.3.1",
     "@swc-node/register": "1.9.2",
     "@swc/cli": "0.3.14",
     "@swc/core": "1.5.7",
