@@ -22,22 +22,29 @@
 }
 @mixin selectGradient($color1, $color2) {
   background: $color1; /* Old browsers */
-  background: url("data:image/svg+xml,%3Csvg width='12px' height='12px' viewBox='0 0 512 512' fill='%23ffffff' xmlns='http://www.w3.org/2000/svg'%3E%3Ctitle%3Eionicons-v5-b%3C/title%3E%3Cpath d='M98,190.06,237.78,353.18a24,24,0,0,0,36.44,0L414,190.06c13.34-15.57,2.28-39.62-18.22-39.62H116.18C95.68,150.44,84.62,174.49,98,190.06Z'/%3E%3C/svg%3E")
+  background:
+    url("data:image/svg+xml,%3Csvg width='12px' height='12px' viewBox='0 0 512 512' fill='%23ffffff' xmlns='http://www.w3.org/2000/svg'%3E%3Ctitle%3Eionicons-v5-b%3C/title%3E%3Cpath d='M98,190.06,237.78,353.18a24,24,0,0,0,36.44,0L414,190.06c13.34-15.57,2.28-39.62-18.22-39.62H116.18C95.68,150.44,84.62,174.49,98,190.06Z'/%3E%3C/svg%3E")
       no-repeat right 8px center,
     -moz-linear-gradient(top, $color1 0%, $color2 100%); /* FF3.6-15 */
-  background: url("data:image/svg+xml,%3Csvg width='12px' height='12px' viewBox='0 0 512 512' fill='%23ffffff' xmlns='http://www.w3.org/2000/svg'%3E%3Ctitle%3Eionicons-v5-b%3C/title%3E%3Cpath d='M98,190.06,237.78,353.18a24,24,0,0,0,36.44,0L414,190.06c13.34-15.57,2.28-39.62-18.22-39.62H116.18C95.68,150.44,84.62,174.49,98,190.06Z'/%3E%3C/svg%3E")
+  background:
+    url("data:image/svg+xml,%3Csvg width='12px' height='12px' viewBox='0 0 512 512' fill='%23ffffff' xmlns='http://www.w3.org/2000/svg'%3E%3Ctitle%3Eionicons-v5-b%3C/title%3E%3Cpath d='M98,190.06,237.78,353.18a24,24,0,0,0,36.44,0L414,190.06c13.34-15.57,2.28-39.62-18.22-39.62H116.18C95.68,150.44,84.62,174.49,98,190.06Z'/%3E%3C/svg%3E")
       no-repeat right 8px center,
     -webkit-linear-gradient(top, $color1 0%, $color2 100%); /* Chrome10-25,Safari5.1-6 */
-  background: url("data:image/svg+xml,%3Csvg width='12px' height='12px' viewBox='0 0 512 512' fill='%23ffffff' xmlns='http://www.w3.org/2000/svg'%3E%3Ctitle%3Eionicons-v5-b%3C/title%3E%3Cpath d='M98,190.06,237.78,353.18a24,24,0,0,0,36.44,0L414,190.06c13.34-15.57,2.28-39.62-18.22-39.62H116.18C95.68,150.44,84.62,174.49,98,190.06Z'/%3E%3C/svg%3E")
+  background:
+    url("data:image/svg+xml,%3Csvg width='12px' height='12px' viewBox='0 0 512 512' fill='%23ffffff' xmlns='http://www.w3.org/2000/svg'%3E%3Ctitle%3Eionicons-v5-b%3C/title%3E%3Cpath d='M98,190.06,237.78,353.18a24,24,0,0,0,36.44,0L414,190.06c13.34-15.57,2.28-39.62-18.22-39.62H116.18C95.68,150.44,84.62,174.49,98,190.06Z'/%3E%3C/svg%3E")
       no-repeat right 8px center,
-    linear-gradient(to bottom, $color1 0%, $color2 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    linear-gradient(
+      to bottom,
+      $color1 0%,
+      $color2 100%
+    ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$color1', endColorstr='$color2',GradientType=0 );
   /* IE6-9 */
 }
 
 @mixin buttonShadow($color1, $color2) {
-  box-shadow: inset -1px -1px 3px 0px
-      rgba(darken($color2, 20%), $darkShadowTransparency),
+  box-shadow:
+    inset -1px -1px 3px 0px rgba(darken($color2, 20%), $darkShadowTransparency),
     inset 1px 1px 3px 0px rgba(lighten($color1, 20%), $lightShadowTransparency);
 }
 @mixin buttonActiveShadow($color1, $color2) {
@@ -67,7 +74,7 @@
   font-family: $font-family;
 }
 @mixin fullWH() {
-  width: 100vw;
+  width: 100%;
   height: 100vh;
 }
 @mixin usePlaid($color) {

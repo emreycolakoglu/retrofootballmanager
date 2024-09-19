@@ -15,13 +15,13 @@ import {
 } from "@rfm/ui-components";
 
 const LandingView = lazy(
-  () => import("./game/landing/views/landingView/landingView")
+  () => import("./game/landing/views/landingView/landingView"),
 );
 const CreateGameView = lazy(
-  () => import("./game/landing/views/createGameView/createGameView")
+  () => import("./game/landing/views/createGameView/createGameView"),
 );
 const PlayerDetailView = lazy(
-  () => import("./game/players/views/playerDetailView/playerDetailView")
+  () => import("./game/players/views/playerDetailView/playerDetailView"),
 );
 const ClubView = lazy(() => import("./game/clubs/views/clubView/clubView"));
 
