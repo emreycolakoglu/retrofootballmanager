@@ -1,10 +1,17 @@
 const config = {
   stories: ["../src/lib/**/*.stories.@(js|jsx|ts|tsx|mdx)"],
-  addons: ["@storybook/addon-essentials"],
+  addons: ["@storybook/addon-essentials", "@chromatic-com/storybook"],
+
   framework: {
     name: "@storybook/react-vite",
     options: {},
   },
+
+  docs: {},
+
+  typescript: {
+    reactDocgen: "react-docgen-typescript"
+  }
 };
 
 export default config;

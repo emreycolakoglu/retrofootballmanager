@@ -3,6 +3,7 @@
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "apps/web-singleplayer/src",
   "projectType": "application",
+  "tags": ["app"],
   "targets": {
     "build": {
       "executor": "@nx/vite:build",
@@ -50,7 +51,8 @@
         "production": {
           "buildTarget": "web-singleplayer:build:production"
         }
-      }
+      },
+      "dependsOn": ["build"]
     },
     "test": {
       "executor": "@nx/vite:test",
@@ -71,6 +73,5 @@
         "cwd": "apps/web-singleplayer/"
       }
     }
-  },
-  "tags": ["app"]
+  }
 }
