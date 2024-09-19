@@ -1,0 +1,33 @@
+# Game Parts
+
+- Onboarding
+  - Enter new club info
+  - Create the starter club
+    - Create squad
+    - Create youth squad
+    - Create starter staff
+- Start of new season
+  - Create other clubs
+  - Create the competitions
+    - Create league
+    - Create national cups
+    - Create international cups
+  - Create other nations competitions
+  - Create calendars
+- Game Loop
+  - Loop each club of each nation
+    - Assess clubs strengths/weaknesses
+    - Take transfer actions
+      - Buy / sell / bid
+    - Take squad actions
+  - Loop each game
+    - Simulate game
+  - Increase / decrease fame
+    - clubs
+    - players
+    - staff
+- End of season
+  - Relegate clubs
+  - Promote clubs
+  - Increase / decrease fame
+    - clubs
