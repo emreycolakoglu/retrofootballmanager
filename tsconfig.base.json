@@ -17,6 +17,7 @@
     "paths": {
       "@rfm/feature-create-game": ["domains/feature-create-game/src/index.ts"],
       "@rfm/feature-database": ["domains/feature-database/src/index.ts"],
+      "@rfm/feature-game-core": ["domains/feature-game-core/src/index.ts"],
       "@rfm/static": ["libs/static/src/index.ts"],
       "@rfm/ui-atoms": ["domains/ui-atoms/src/index.ts"],
       "@rfm/ui-club-detail": ["libs/ui-club-detail/src/index.ts"],

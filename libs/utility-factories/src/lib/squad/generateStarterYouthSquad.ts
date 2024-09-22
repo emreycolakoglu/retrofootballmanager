@@ -6,7 +6,7 @@ import {
   PlayerStyle,
   generatePlayer,
 } from "../player";
-import { random } from "@rfm/utility-common";
+import { Random } from "@rfm/utility-common";
 
 export function generateStarterYouthTeamSquad(options: {
   nationality?: any;
@@ -16,7 +16,7 @@ export function generateStarterYouthTeamSquad(options: {
   const formula: IPlayerFormula[] = [
     {
       position: PlayerPosition.GOALKEEPER,
-      quality: random.getRandomInArray([
+      quality: Random.getRandomInArray([
         PlayerQuality.POOR,
         PlayerQuality.TRASH,
       ]),
@@ -26,7 +26,7 @@ export function generateStarterYouthTeamSquad(options: {
     },
     {
       position: PlayerPosition.GOALKEEPER,
-      quality: random.getRandomInArray([
+      quality: Random.getRandomInArray([
         PlayerQuality.POOR,
         PlayerQuality.TRASH,
       ]),
@@ -36,11 +36,11 @@ export function generateStarterYouthTeamSquad(options: {
     },
     {
       position: PlayerPosition.LEFTBACK,
-      quality: random.getRandomInArray([
+      quality: Random.getRandomInArray([
         PlayerQuality.POOR,
         PlayerQuality.TRASH,
       ]),
-      style: random.getRandomInArray([
+      style: Random.getRandomInArray([
         PlayerStyle.DEFENSIVE_FULLBACK,
         PlayerStyle.OFFENSIVE_FULLBACK,
       ]),
@@ -49,11 +49,11 @@ export function generateStarterYouthTeamSquad(options: {
     },
     {
       position: PlayerPosition.LEFTBACK,
-      quality: random.getRandomInArray([
+      quality: Random.getRandomInArray([
         PlayerQuality.POOR,
         PlayerQuality.TRASH,
       ]),
-      style: random.getRandomInArray([
+      style: Random.getRandomInArray([
         PlayerStyle.DEFENSIVE_FULLBACK,
         PlayerStyle.OFFENSIVE_FULLBACK,
       ]),
@@ -62,11 +62,11 @@ export function generateStarterYouthTeamSquad(options: {
     },
     {
       position: PlayerPosition.RIGHTBACK,
-      quality: random.getRandomInArray([
+      quality: Random.getRandomInArray([
         PlayerQuality.POOR,
         PlayerQuality.TRASH,
       ]),
-      style: random.getRandomInArray([
+      style: Random.getRandomInArray([
         PlayerStyle.DEFENSIVE_FULLBACK,
         PlayerStyle.OFFENSIVE_FULLBACK,
       ]),
@@ -75,11 +75,11 @@ export function generateStarterYouthTeamSquad(options: {
     },
     {
       position: PlayerPosition.RIGHTBACK,
-      quality: random.getRandomInArray([
+      quality: Random.getRandomInArray([
         PlayerQuality.POOR,
         PlayerQuality.TRASH,
       ]),
-      style: random.getRandomInArray([
+      style: Random.getRandomInArray([
         PlayerStyle.DEFENSIVE_FULLBACK,
         PlayerStyle.OFFENSIVE_FULLBACK,
       ]),
@@ -88,11 +88,11 @@ export function generateStarterYouthTeamSquad(options: {
     },
     {
       position: PlayerPosition.CENTERBACK,
-      quality: random.getRandomInArray([
+      quality: Random.getRandomInArray([
         PlayerQuality.POOR,
         PlayerQuality.TRASH,
       ]),
-      style: random.getRandomInArray([
+      style: Random.getRandomInArray([
         PlayerStyle.PLAYMAKER_DEFENDER,
         PlayerStyle.STRONG_DEFENDER,
         PlayerStyle.QUICK_DEFENDER,
@@ -102,11 +102,11 @@ export function generateStarterYouthTeamSquad(options: {
     },
     {
       position: PlayerPosition.CENTERBACK,
-      quality: random.getRandomInArray([
+      quality: Random.getRandomInArray([
         PlayerQuality.POOR,
         PlayerQuality.TRASH,
       ]),
-      style: random.getRandomInArray([
+      style: Random.getRandomInArray([
         PlayerStyle.PLAYMAKER_DEFENDER,
         PlayerStyle.STRONG_DEFENDER,
         PlayerStyle.QUICK_DEFENDER,
@@ -116,11 +116,11 @@ export function generateStarterYouthTeamSquad(options: {
     },
     {
       position: PlayerPosition.CENTERBACK,
-      quality: random.getRandomInArray([
+      quality: Random.getRandomInArray([
         PlayerQuality.POOR,
         PlayerQuality.TRASH,
       ]),
-      style: random.getRandomInArray([
+      style: Random.getRandomInArray([
         PlayerStyle.PLAYMAKER_DEFENDER,
         PlayerStyle.STRONG_DEFENDER,
         PlayerStyle.QUICK_DEFENDER,
@@ -130,11 +130,11 @@ export function generateStarterYouthTeamSquad(options: {
     },
     {
       position: PlayerPosition.CENTERBACK,
-      quality: random.getRandomInArray([
+      quality: Random.getRandomInArray([
         PlayerQuality.POOR,
         PlayerQuality.TRASH,
       ]),
-      style: random.getRandomInArray([
+      style: Random.getRandomInArray([
         PlayerStyle.PLAYMAKER_DEFENDER,
         PlayerStyle.STRONG_DEFENDER,
         PlayerStyle.QUICK_DEFENDER,
@@ -144,11 +144,11 @@ export function generateStarterYouthTeamSquad(options: {
     },
     {
       position: PlayerPosition.RIGHTMIDFIELD,
-      quality: random.getRandomInArray([
+      quality: Random.getRandomInArray([
         PlayerQuality.POOR,
         PlayerQuality.TRASH,
       ]),
-      style: random.getRandomInArray([
+      style: Random.getRandomInArray([
         PlayerStyle.DRIBBLER,
         PlayerStyle.OFFENSIVE_FULLBACK,
         PlayerStyle.DEFENSIVE_FULLBACK,
@@ -159,11 +159,11 @@ export function generateStarterYouthTeamSquad(options: {
     },
     {
       position: PlayerPosition.RIGHTMIDFIELD,
-      quality: random.getRandomInArray([
+      quality: Random.getRandomInArray([
         PlayerQuality.POOR,
         PlayerQuality.TRASH,
       ]),
-      style: random.getRandomInArray([
+      style: Random.getRandomInArray([
         PlayerStyle.DRIBBLER,
         PlayerStyle.OFFENSIVE_FULLBACK,
         PlayerStyle.DEFENSIVE_FULLBACK,
@@ -174,11 +174,11 @@ export function generateStarterYouthTeamSquad(options: {
     },
     {
       position: PlayerPosition.LEFTMIDFIELD,
-      quality: random.getRandomInArray([
+      quality: Random.getRandomInArray([
         PlayerQuality.POOR,
         PlayerQuality.TRASH,
       ]),
-      style: random.getRandomInArray([
+      style: Random.getRandomInArray([
         PlayerStyle.DRIBBLER,
         PlayerStyle.OFFENSIVE_FULLBACK,
         PlayerStyle.DEFENSIVE_FULLBACK,
@@ -189,11 +189,11 @@ export function generateStarterYouthTeamSquad(options: {
     },
     {
       position: PlayerPosition.LEFTMIDFIELD,
-      quality: random.getRandomInArray([
+      quality: Random.getRandomInArray([
         PlayerQuality.POOR,
         PlayerQuality.TRASH,
       ]),
-      style: random.getRandomInArray([
+      style: Random.getRandomInArray([
         PlayerStyle.DRIBBLER,
         PlayerStyle.OFFENSIVE_FULLBACK,
         PlayerStyle.DEFENSIVE_FULLBACK,
@@ -203,16 +203,16 @@ export function generateStarterYouthTeamSquad(options: {
       ageTemplate: { min: 16, max: 19 },
     },
     {
-      position: random.getRandomInArray([
+      position: Random.getRandomInArray([
         PlayerPosition.CENTERMIDFIELD,
         PlayerPosition.ATTACKINGMIDFIELD,
         PlayerPosition.DEFENSIVEMIDFIELD,
       ]),
-      quality: random.getRandomInArray([
+      quality: Random.getRandomInArray([
         PlayerQuality.POOR,
         PlayerQuality.TRASH,
       ]),
-      style: random.getRandomInArray([
+      style: Random.getRandomInArray([
         PlayerStyle.DRIBBLER,
         PlayerStyle.PLAYMAKER,
         PlayerStyle.BOX_2_BOX,
@@ -222,16 +222,16 @@ export function generateStarterYouthTeamSquad(options: {
       ageTemplate: { min: 16, max: 19 },
     },
     {
-      position: random.getRandomInArray([
+      position: Random.getRandomInArray([
         PlayerPosition.CENTERMIDFIELD,
         PlayerPosition.ATTACKINGMIDFIELD,
         PlayerPosition.DEFENSIVEMIDFIELD,
       ]),
-      quality: random.getRandomInArray([
+      quality: Random.getRandomInArray([
         PlayerQuality.POOR,
         PlayerQuality.TRASH,
       ]),
-      style: random.getRandomInArray([
+      style: Random.getRandomInArray([
         PlayerStyle.DRIBBLER,
         PlayerStyle.PLAYMAKER,
         PlayerStyle.BOX_2_BOX,
@@ -241,16 +241,16 @@ export function generateStarterYouthTeamSquad(options: {
       ageTemplate: { min: 16, max: 19 },
     },
     {
-      position: random.getRandomInArray([
+      position: Random.getRandomInArray([
         PlayerPosition.CENTERMIDFIELD,
         PlayerPosition.ATTACKINGMIDFIELD,
         PlayerPosition.DEFENSIVEMIDFIELD,
       ]),
-      quality: random.getRandomInArray([
+      quality: Random.getRandomInArray([
         PlayerQuality.POOR,
         PlayerQuality.TRASH,
       ]),
-      style: random.getRandomInArray([
+      style: Random.getRandomInArray([
         PlayerStyle.DRIBBLER,
         PlayerStyle.PLAYMAKER,
         PlayerStyle.BOX_2_BOX,
@@ -260,16 +260,16 @@ export function generateStarterYouthTeamSquad(options: {
       ageTemplate: { min: 16, max: 19 },
     },
     {
-      position: random.getRandomInArray([
+      position: Random.getRandomInArray([
         PlayerPosition.CENTERMIDFIELD,
         PlayerPosition.ATTACKINGMIDFIELD,
         PlayerPosition.DEFENSIVEMIDFIELD,
       ]),
-      quality: random.getRandomInArray([
+      quality: Random.getRandomInArray([
         PlayerQuality.POOR,
         PlayerQuality.TRASH,
       ]),
-      style: random.getRandomInArray([
+      style: Random.getRandomInArray([
         PlayerStyle.DRIBBLER,
         PlayerStyle.PLAYMAKER,
         PlayerStyle.BOX_2_BOX,
@@ -279,15 +279,15 @@ export function generateStarterYouthTeamSquad(options: {
       ageTemplate: { min: 16, max: 19 },
     },
     {
-      position: random.getRandomInArray([
+      position: Random.getRandomInArray([
         PlayerPosition.FORWARD,
         PlayerPosition.STRIKER,
       ]),
-      quality: random.getRandomInArray([
+      quality: Random.getRandomInArray([
         PlayerQuality.POOR,
         PlayerQuality.TRASH,
       ]),
-      style: random.getRandomInArray([
+      style: Random.getRandomInArray([
         PlayerStyle.FORWARD,
         PlayerStyle.POACHER,
         PlayerStyle.STRIKER,
@@ -296,15 +296,15 @@ export function generateStarterYouthTeamSquad(options: {
       ageTemplate: { min: 16, max: 19 },
     },
     {
-      position: random.getRandomInArray([
+      position: Random.getRandomInArray([
         PlayerPosition.FORWARD,
         PlayerPosition.STRIKER,
       ]),
-      quality: random.getRandomInArray([
+      quality: Random.getRandomInArray([
         PlayerQuality.POOR,
         PlayerQuality.TRASH,
       ]),
-      style: random.getRandomInArray([
+      style: Random.getRandomInArray([
         PlayerStyle.FORWARD,
         PlayerStyle.POACHER,
         PlayerStyle.STRIKER,
@@ -313,15 +313,15 @@ export function generateStarterYouthTeamSquad(options: {
       ageTemplate: { min: 16, max: 19 },
     },
     {
-      position: random.getRandomInArray([
+      position: Random.getRandomInArray([
         PlayerPosition.FORWARD,
         PlayerPosition.STRIKER,
       ]),
-      quality: random.getRandomInArray([
+      quality: Random.getRandomInArray([
         PlayerQuality.POOR,
         PlayerQuality.TRASH,
       ]),
-      style: random.getRandomInArray([
+      style: Random.getRandomInArray([
         PlayerStyle.FORWARD,
         PlayerStyle.POACHER,
         PlayerStyle.STRIKER,
@@ -330,15 +330,15 @@ export function generateStarterYouthTeamSquad(options: {
       ageTemplate: { min: 16, max: 19 },
     },
     {
-      position: random.getRandomInArray([
+      position: Random.getRandomInArray([
         PlayerPosition.FORWARD,
         PlayerPosition.STRIKER,
       ]),
-      quality: random.getRandomInArray([
+      quality: Random.getRandomInArray([
         PlayerQuality.POOR,
         PlayerQuality.TRASH,
       ]),
-      style: random.getRandomInArray([
+      style: Random.getRandomInArray([
         PlayerStyle.FORWARD,
         PlayerStyle.POACHER,
         PlayerStyle.STRIKER,

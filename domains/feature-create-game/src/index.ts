@@ -1,1 +1,1 @@
-export * from "./lib/feature-create-game";
+export * from "./lib/create-player";

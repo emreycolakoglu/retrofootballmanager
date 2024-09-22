@@ -1,29 +1,20 @@
-import { generatePlayer } from "./playerGenerator";
-import { PlayerPosition, PlayerQuality, PlayerStyle } from "./interfaces";
+import { generatePlayer } from "./createPlayer";
+import { PlayerGenerator } from "./interfaces";
 
 describe("Random player generation", () => {
   it("should work", () => {
     const createdPlayer = generatePlayer({
-      nationality: {
-        name: "Türkiye",
-        alpha2Code: "TR",
-        alpha3Code: "TRY",
-        availableToPlay: true,
-        continent: "Europe",
-        prestige: 500,
-        languages: ["TUR"],
-        currencies: ["TRY"],
-      },
       ageTemplate: { min: 17, max: 25 },
-      position: PlayerPosition.CENTERBACK,
-      style: PlayerStyle.STRONG_DEFENDER,
+      position: PlayerGenerator.PlayerPosition.CENTERBACK,
+      style: PlayerGenerator.PlayerStyle.STRONG_DEFENDER,
       clubId: "1",
-      quality: PlayerQuality.VERYGOOD,
+      quality: PlayerGenerator.PlayerQuality.VERYGOOD,
+      firstNames: ["John"],
+      lastNames: ["Doe"],
     });
 
     expect(createdPlayer.age).toBeGreaterThanOrEqual(17);
     expect(createdPlayer.age).toBeLessThanOrEqual(25);
-    expect(createdPlayer.nationality).toBe("Türkiye");
     expect(createdPlayer.position.defence).toBeGreaterThanOrEqual(15);
     expect(createdPlayer.position.attackingMid).toBeLessThanOrEqual(5);
     expect(createdPlayer.position.side.center).toBeGreaterThan(15);

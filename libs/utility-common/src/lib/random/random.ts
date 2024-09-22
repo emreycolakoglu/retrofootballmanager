@@ -1,4 +1,4 @@
-export const random = {
+export const Random = {
   getBetween(min: number, max: number) {
     return Math.floor(Math.random() * (max - min)) + min;
   },
